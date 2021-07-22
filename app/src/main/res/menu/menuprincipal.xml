@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/idregistrar"
+        android:title="Registrar Productos" />
+    <item
+        android:id="@+id/idaydua"
+        android:title="Ayuda" />
+    <item
+        android:id="@+id/idsalir"
+        android:title="Salir" />
+</menu>
