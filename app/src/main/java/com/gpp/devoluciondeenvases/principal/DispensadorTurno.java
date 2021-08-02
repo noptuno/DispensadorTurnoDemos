@@ -7,7 +7,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,8 +21,6 @@ import android.hardware.usb.UsbEndpoint;
 import android.hardware.usb.UsbInterface;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,14 +30,10 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.gpp.devoluciondeenvases.R;
 
-import com.printer.sdk.PrinterConstants;
-import com.printer.sdk.PrinterInstance;
-import com.printer.sdk.utils.XLog;
 import com.starmicronics.starioextension.ICommandBuilder;
 import com.starmicronics.starioextension.StarIoExt;
 
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -52,15 +45,11 @@ public class DispensadorTurno extends AppCompatActivity {
 
     public static boolean isConnected = false;// 蓝牙连接状态
 
-
     private static final String ACTION_USB_PERMISSION = "com.android.example.USB_PERMISSION";
     private boolean permisosimpresora = false;
     private boolean impresoraactiva = false;
     private UsbDeviceConnection connection;
-
     private UsbInterface usbInterface;
-
-
     private UsbEndpoint usbEndpointIn = null;
     private UsbEndpoint usbEndpointOut = null;
     private Button btnimprimir,conectar;
@@ -73,19 +62,17 @@ public class DispensadorTurno extends AppCompatActivity {
     private TextView numeromostrar;
     private Context context;
     private LottieAnimationView animacion;
-
-   private  UsbManager usbManager;
+    private  UsbManager usbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dispensador_turno);
-        constrain = findViewById(R.id.constraintdis);
+        constrain = findViewById(R.id.constrainturno);
         btnimprimir = findViewById(R.id.btnimprimir);
-        numeromostrar = findViewById(R.id.txtNum);
+        numeromostrar = findViewById(R.id.txtNum1);
         animacion = findViewById(R.id.animation_view2);
         conectar = findViewById(R.id.btnconectar);
-
         conectar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +93,6 @@ public class DispensadorTurno extends AppCompatActivity {
                  Toast.makeText(DispensadorTurno.this, "Debe aceptar permisos", Toast.LENGTH_LONG).show();
             }
 
-
             }
         });
         actionBar = getSupportActionBar();
@@ -118,7 +104,6 @@ public class DispensadorTurno extends AppCompatActivity {
             }
         });
         context = getApplicationContext();
-
 
         usb();
 

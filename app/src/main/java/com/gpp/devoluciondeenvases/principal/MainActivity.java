@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
     String fechainicio;
     EditText numero;
     SharedPreferences pref;
-//actualizado
 
-    String prueba;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
