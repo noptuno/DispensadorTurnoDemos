@@ -18,18 +18,16 @@
         android:roundIcon="@mipmap/ic_logo_dmr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".principal.DispensadorTurno"></activity>
-
-        <activity android:name=".principal.Test">
+        <activity android:name=".principal.dispensador.RegistroSectores"></activity>
+        <activity android:name=".principal.dispensador.MainDispensador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
-
+        <activity android:name=".principal.DispensadorTurno" />
+        <activity android:name=".principal.Test" />
         <activity android:name=".principal.ConfigurarApp" />
         <activity android:name=".principal.RegistrarProducto">
             <meta-data
@@ -38,12 +36,8 @@
         </activity>
         <activity
             android:name=".principal.DevoluciondeEnvases"
-            android:theme="@style/AppThemeSinbarra">
-
-        </activity>
-        <activity android:name=".principal.MainActivity">
-
-        </activity>
+            android:theme="@style/AppThemeSinbarra" />
+        <activity android:name=".principal.MainActivity"></activity>
     </application>
 
 </manifest>

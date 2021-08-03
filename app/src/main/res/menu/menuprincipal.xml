@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/idregistrar"
-        android:title="Registrar Productos" />
+        android:title="Registrar Sectores" />
     <item
         android:id="@+id/idaydua"
         android:title="Ayuda" />

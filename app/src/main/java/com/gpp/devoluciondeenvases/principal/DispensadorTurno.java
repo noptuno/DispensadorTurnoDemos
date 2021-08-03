@@ -67,7 +67,11 @@ public class DispensadorTurno extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_dispensador_turno);
+
         constrain = findViewById(R.id.constrainturno);
         btnimprimir = findViewById(R.id.btnimprimir);
         numeromostrar = findViewById(R.id.txtNum1);

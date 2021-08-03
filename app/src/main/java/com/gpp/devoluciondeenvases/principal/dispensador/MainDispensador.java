@@ -1,57 +1,49 @@
-package com.gpp.devoluciondeenvases.principal;
+package com.gpp.devoluciondeenvases.principal.dispensador;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialog;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gpp.devoluciondeenvases.R;
+import com.gpp.devoluciondeenvases.principal.MainActivity;
+import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-public class MainActivity extends AppCompatActivity {
-    private int m_configurado;
-    String fechainicio;
-    EditText numero;
-    SharedPreferences pref;
+public class MainDispensador extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_dispensador);
 
-        numero = findViewById(R.id.numeroeditable);
-    }
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        Date date2 = new Date();
-        fechainicio = dateFormat.format(date2);
 
-        pref = getSharedPreferences("DISPENSADORDEMO", Context.MODE_PRIVATE);
-        numero.setText(pref.getString("NUMERO", "00"));
-        numero.requestFocus();
+
+
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public boolean onCreatePanelMenu(int featureId, @NonNull Menu menu) {
@@ -64,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.idregistrar:
-                Intent in = new Intent(MainActivity.this, RegistrarProducto.class);
+                Intent in = new Intent(MainDispensador.this, RegistroSectores.class);
                 startActivity(in);
                 break;
             case R.id.idaydua:
@@ -82,66 +74,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void registrar_producto(View v){
-    Intent in = new Intent(MainActivity.this, RegistrarProducto.class);
-    startActivity(in);
-}
-
-    public void Dispensador_turno(View v){
-
-            Intent i = new Intent(MainActivity.this, DispensadorTurno.class);
-            pref = getSharedPreferences("DISPENSADORDEMO", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = pref.edit();
-            if (numero.getText().toString().isEmpty() || numero.getText().toString().equals("") || numero.getText().toString().equals(" ") ){
-                editor.putString("NUMERO", "0");
-                numero.setText("0");
-            }else{
-                editor.putString("NUMERO", numero.getText().toString());
-            }
-            editor.apply();
-            GuardarFecha();
-            startActivity(i);
-
-    }
-
-    void GuardarFecha(){
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        Date date = new Date();
-
-        String fechaactual = dateFormat.format(date);
-
-        pref = getSharedPreferences("DISPENSADORDEMO", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("FECHA", fechaactual);
-        editor.apply();
-    }
-
-
-
-    public void devolver_producto(View v){
-        Intent i = new Intent(MainActivity.this, DevoluciondeEnvases.class);
-        startActivity(i);
-    }
-
     void DisplayAboutDialog() {
-        final AppCompatDialog about = new AppCompatDialog(MainActivity.this);
+        final AppCompatDialog about = new AppCompatDialog(MainDispensador.this);
         about.setContentView(R.layout.doabout);
         about.setCancelable(true);
         about.setTitle("Sobre Nosotros");
-
         // get version of the application.
         PackageInfo pinfo;
         try
         {
             pinfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-
             if (pinfo != null) {
-
-
                 TextView descTextView = (TextView) about.findViewById(R.id.AboutDescription);
-
-
                 String descString = " " + getString(R.string.app_name) + "\n"
                         + " Version Code:"
                         + String.valueOf(pinfo.versionCode) + "\n"
@@ -158,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 // set up the image view
                 ImageView AboutImgView = (ImageView) about
                         .findViewById(R.id.AboutImageView);
-
                 if (AboutImgView != null)
                     AboutImgView.setImageResource(R.mipmap.ic_launcher);
 
@@ -181,4 +124,5 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 }

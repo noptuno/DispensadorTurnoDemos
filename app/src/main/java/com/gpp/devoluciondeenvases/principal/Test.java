@@ -15,7 +15,12 @@ public class Test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_dispensador_turno2);
+
+
         cons = findViewById(R.id.constrainturnodos);
         actionBar = getSupportActionBar();
 

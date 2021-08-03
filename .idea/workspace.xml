@@ -13,15 +13,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/dispensador/MainDispensador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/dispensador/RegistroSectores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/DispensadorTurno.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/DispensadorTurno.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/gpp/devoluciondeenvases/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/DispensadorTurno.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/DispensadorTurno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/gpp/devoluciondeenvases/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menuprincipal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menuprincipal.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +83,17 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects - copia/DMR" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.1345062204">
+      <recent name="com.gpp.devoluciondeenvases.principal.dispensador" />
+      <recent name="com.gpp.devoluciondeenvases.principal" />
+      <recent name="com.gpp.devoluciondeenvases.principal.fragments" />
+      <recent name="com.gpp.devoluciondeenvases.principal.fragements" />
+    </key>
     <key name="android.template.-813591224">
       <recent name="com.gpp.devoluciondeenvases.principal" />
       <recent name="com.gpp.devoluciondeenvases" />
@@ -194,22 +213,31 @@
       <option name="project" value="LOCAL" />
       <updated>1627913888226</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="diseño">
+      <created>1627937570105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1627937570105</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="actualizndo module" />
     <MESSAGE value="Prueba" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prueba" />
+    <MESSAGE value="diseño" />
+    <option name="LAST_COMMIT_MESSAGE" value="diseño" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1625842804633">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1625842804633" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626273499467">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1710" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628016408031">
+      <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1710" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1628016408031" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626273499467" />
     <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog" timestamp="1625839953055">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -219,13 +247,15 @@
       <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
     <state x="-1859" y="275" key="AndroidCreateResourceFileDialog/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627929880259" />
-    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1627913887596">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-1995" y="0" key="CommitChangelistDialog2" timestamp="1627937569332">
+      <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1995" y="0" key="CommitChangelistDialog2/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627937569332" />
     <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/-2400.0.1920.1040@0.0.1536.824" timestamp="1627913887596" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1626276862842">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1660" y="275" key="FileChooserDialogImpl" timestamp="1628015913615">
+      <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1660" y="275" key="FileChooserDialogImpl/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1628015913615" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626276862842" />
     <state x="817" y="418" key="Github.ShareDialog" timestamp="1626984812329">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -271,9 +301,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626277315846" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1627913890215">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-1949" y="183" key="Vcs.Push.Dialog.v2" timestamp="1627937572019">
+      <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1949" y="183" key="Vcs.Push.Dialog.v2/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627937572019" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-2400.0.1920.1040@0.0.1536.824" timestamp="1627913890215" />
   </component>
   <component name="XDebuggerManager">
@@ -291,7 +322,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/DispensadorTurno.java</url>
-          <line>251</line>
+          <line>255</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
