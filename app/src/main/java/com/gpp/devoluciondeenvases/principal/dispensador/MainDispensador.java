@@ -20,25 +20,33 @@ import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 
 public class MainDispensador extends AppCompatActivity {
 
+
+    private Button btnconfigurar, btniniciar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dispensador);
 
+        btnconfigurar = findViewById(R.id.btnconfigurar);
+        btniniciar = findViewById(R.id.btniniciar);
 
 
+        btniniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
 
-
-
+        btnconfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(MainDispensador.this, RegistroSectores.class);
+                startActivity(in);
+            }
+        });
     }
-
-
-
-
-
-
-
 
 
 

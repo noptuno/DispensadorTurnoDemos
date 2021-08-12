@@ -32,4 +32,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_dmr_milrollos" />
 
+    <Button
+        android:id="@+id/btnconfigurar"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/btn_fondo_color2"
+        android:backgroundTint="#3F51B5"
+        android:text="CONFIGURAR"
+        android:textColor="#FAF9F9"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

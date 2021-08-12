@@ -12,13 +12,26 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="" />
+    <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/adapter/AdapterSector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/SectorDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/clases/Sector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_note_sectores.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/ConstantsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/ConstantsDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/ProductoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/ProductoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/RegistrarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/RegistrarProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/dispensador/MainDispensador.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/dispensador/MainDispensador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/dispensador/RegistroSectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/dispensador/RegistroSectores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@192.168.234.195:5555]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@192.168.1.32:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -34,9 +47,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Class" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -60,7 +73,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects - copia/DMR" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../taggondola" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -75,7 +88,7 @@
       <recent name="com.gpp.devoluciondeenvases.principal" />
       <recent name="com.gpp.devoluciondeenvases" />
     </key>
-    <key name="android.template.-1580455863">
+    <key name="android.template.899514868">
       <recent name="com.gpp.devoluciondeenvases.principal" />
     </key>
     <key name="android.template.306471783">
@@ -88,13 +101,13 @@
       <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensadorTurno\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensadorTurno\app\libs" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.gpp.devoluciondeenvases.basededatos" />
-      <recent name="com.gpp.devoluciondeenvases.adapter" />
-      <recent name="com.gpp.devoluciondeenvases.clases" />
-    </key>
-    <key name="android.template.899514868">
+    <key name="android.template.-1580455863">
       <recent name="com.gpp.devoluciondeenvases.principal" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gpp.devoluciondeenvases.adapter" />
+      <recent name="com.gpp.devoluciondeenvases.basededatos" />
+      <recent name="com.gpp.devoluciondeenvases.clases" />
     </key>
   </component>
   <component name="RunManager">
@@ -215,10 +228,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="diseñando" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1625842804633">
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1628092379688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1625842804633" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1628092379688" />
     <state x="-1710" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628016408031">
       <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
@@ -228,20 +241,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625839953055" />
-    <state x="-1859" y="275" key="AndroidCreateResourceFileDialog" timestamp="1627929880259">
-      <screen x="-2400" y="0" width="1920" height="1040" />
+    <state x="541" y="275" key="AndroidCreateResourceFileDialog" timestamp="1628088995671">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1859" y="275" key="AndroidCreateResourceFileDialog/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627929880259" />
+    <state x="541" y="275" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628088995671" />
     <state x="-1995" y="0" key="CommitChangelistDialog2" timestamp="1628023458688">
       <screen x="-2400" y="0" width="1920" height="1040" />
     </state>
     <state x="-1995" y="0" key="CommitChangelistDialog2/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1628023458688" />
     <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/-2400.0.1920.1040@0.0.1536.824" timestamp="1627913887596" />
-    <state x="-1660" y="275" key="FileChooserDialogImpl" timestamp="1628015913615">
-      <screen x="-2400" y="0" width="1920" height="1040" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1628709483498">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1660" y="275" key="FileChooserDialogImpl/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1628015913615" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626276862842" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1628709483498" />
     <state x="817" y="418" key="Github.ShareDialog" timestamp="1626984812329">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -250,26 +264,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626984939926" />
-    <state width="938" height="118" key="GridCell.Tab.0.bottom" timestamp="1627936648104">
-      <screen x="-2400" y="0" width="1920" height="1040" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1628100090904">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="118" key="GridCell.Tab.0.bottom/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627936648104" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626277629038" />
-    <state width="938" height="118" key="GridCell.Tab.0.center" timestamp="1627936648104">
-      <screen x="-2400" y="0" width="1920" height="1040" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1628100090904" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1628100090904">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="118" key="GridCell.Tab.0.center/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627936648104" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626277629038" />
-    <state width="938" height="118" key="GridCell.Tab.0.left" timestamp="1627936648104">
-      <screen x="-2400" y="0" width="1920" height="1040" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1628100090904" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1628100090904">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="118" key="GridCell.Tab.0.left/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627936648104" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626277629038" />
-    <state width="938" height="118" key="GridCell.Tab.0.right" timestamp="1627936648104">
-      <screen x="-2400" y="0" width="1920" height="1040" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1628100090904" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1628100090904">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="118" key="GridCell.Tab.0.right/0.0.1536.824/-2400.0.1920.1040@-2400.0.1920.1040" timestamp="1627936648104" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626277629038" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1628100090904" />
     <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1626277315846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

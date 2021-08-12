@@ -102,7 +102,6 @@ public class ProductoDB {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(ConstantsDB.TABLA_PRODUCTO_SQL);
-
         }
 
         @Override

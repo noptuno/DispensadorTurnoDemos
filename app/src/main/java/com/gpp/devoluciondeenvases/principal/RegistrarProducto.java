@@ -41,7 +41,6 @@ public class RegistrarProducto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_producto);
 
-
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -66,7 +65,6 @@ public class RegistrarProducto extends AppCompatActivity {
                     BigDecimal bd = new BigDecimal(precio.getText().toString());
                     bd = bd.setScale(4, RoundingMode.HALF_UP);
                     producto.setPrecio(bd.doubleValue());
-
 
                     if (registrarProdcuto(producto)) {
                         limpiar();
