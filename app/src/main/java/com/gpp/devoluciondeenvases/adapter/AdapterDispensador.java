@@ -1,35 +1,32 @@
 package com.gpp.devoluciondeenvases.adapter;
 
 import android.graphics.Color;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gpp.devoluciondeenvases.R;
-import com.gpp.devoluciondeenvases.clases.Producto;
 import com.gpp.devoluciondeenvases.clases.Sector;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterSector extends RecyclerView.Adapter<AdapterSector.NoteViewHolder> {
+public class AdapterDispensador extends RecyclerView.Adapter<AdapterDispensador.NoteViewHolder> {
 
     private List<Sector> notes;
     private OnNoteSelectedListener onNoteSelectedListener;
     private OnNoteDetailListener onDetailListener;
 
-    public AdapterSector() {
+    public AdapterDispensador() {
         this.notes = new ArrayList<>();
     }
 
-    public AdapterSector(List<Sector> notes) {
+    public AdapterDispensador(List<Sector> notes) {
         this.notes = notes;
     }
 
@@ -38,7 +35,7 @@ public class AdapterSector extends RecyclerView.Adapter<AdapterSector.NoteViewHo
     public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View elementoTitular = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_note_sectores, parent, false);
+                .inflate(R.layout.item_note_sectors_imprimir, parent, false);
 
         return new NoteViewHolder(elementoTitular);
     }
@@ -92,7 +89,6 @@ public class AdapterSector extends RecyclerView.Adapter<AdapterSector.NoteViewHo
     public class NoteViewHolder extends RecyclerView.ViewHolder {
         private TextView nombre;
         private TextView numero;
-        private CheckBox checkBox;
         private LinearLayout layout;
 
 
@@ -100,10 +96,9 @@ public class AdapterSector extends RecyclerView.Adapter<AdapterSector.NoteViewHo
         public NoteViewHolder(View item) {
             super(item);
 
-            nombre = (TextView) item.findViewById(R.id.txtnombresector);
-            numero = (TextView) item.findViewById(R.id.txtnumero);
-            checkBox = (CheckBox) item.findViewById(R.id.checkBox);
-            layout  = (LinearLayout) item.findViewById(R.id.layout);
+            nombre = (TextView) item.findViewById(R.id.txtnombresec);
+            numero = (TextView) item.findViewById(R.id.txtnumerosec);
+            layout  = (LinearLayout) item.findViewById(R.id.layoutsec);
 
         //falta color
 
@@ -114,33 +109,6 @@ public class AdapterSector extends RecyclerView.Adapter<AdapterSector.NoteViewHo
             nombre.setText(sector.getNombreSector());
             numero.setText(""+sector.getNumeroSector());
             layout.setBackgroundColor(Color.parseColor(sector.getColorSector()));
-
-            if (sector.getHabilitadoSector() == 1){
-                checkBox.setChecked(true);
-            }else{
-                checkBox.setChecked(false);
-            }
-
-            checkBox.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    if (onDetailListener != null) {
-
-                        if (sector.getHabilitadoSector() == 1){
-                            sector.setHabilitadoSector(0);
-                            checkBox.setChecked(false);
-                        }else{
-                            sector.setHabilitadoSector(1);
-                            checkBox.setChecked(true);
-                        }
-                        onDetailListener.onDetail(sector);
-                    }
-
-                }
-            });
-
-
 
 
             itemView.setOnClickListener(new View.OnClickListener() {

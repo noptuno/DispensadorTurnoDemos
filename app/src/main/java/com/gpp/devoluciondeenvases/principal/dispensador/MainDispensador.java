@@ -35,7 +35,8 @@ public class MainDispensador extends AppCompatActivity {
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
+                startActivity(in);
             }
         });
 

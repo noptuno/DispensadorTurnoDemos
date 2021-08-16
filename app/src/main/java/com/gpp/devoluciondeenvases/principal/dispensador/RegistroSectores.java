@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -30,6 +32,7 @@ import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 
 public class RegistroSectores extends AppCompatActivity {
     private AdapterSector adapter;
@@ -38,7 +41,7 @@ public class RegistroSectores extends AppCompatActivity {
     private EditText nombre, numero;
     private String color = "#B30D0D";
     private LinearLayout layoutPrincipal;
-
+    private int idsector, mostrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +49,13 @@ public class RegistroSectores extends AppCompatActivity {
 
         setContentView(R.layout.activity_resgistro_sectores);
 
+        layoutPrincipal = findViewById(R.id.layoutbotones);
 
-
-        layoutPrincipal = findViewById(R.id.layouprincipal);
         botones();
-
 
         btnregistrar= findViewById(R.id.btnregistarsector);
         nombre= findViewById(R.id.etxtnombre);
-
         numero= findViewById(R.id.etxtnumero);
-
         btnnuevosector= findViewById(R.id.btnnuevosector);
 
         btnnuevosector.setOnClickListener(new View.OnClickListener() {
@@ -71,56 +70,73 @@ public class RegistroSectores extends AppCompatActivity {
         btnregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!nombre.getText().toString().isEmpty() && !numero.getText().toString().isEmpty()) {
 
-                if (!nombre.getText().toString().equals(" ")) {
+                 if (btnregistrar.getText().equals("MODIFICAR")){
 
+                     Sector sector = new Sector();
+                     sector.setIdSector(idsector);
+                     sector.setNombreSector(nombre.getText().toString());
+                     sector.setColorSector(color);
+                     sector.setHabilitadoSector(1);
+                     sector.setNumeroSector(Integer.parseInt(numero.getText().toString()));
+                     actualziar(sector);
+                     limpiar();
+
+                 }else{
                     Sector sector = new Sector();
                     sector.setNombreSector(nombre.getText().toString());
                     sector.setColorSector(color);
-                    sector.setNumeroSector(0);
-
-                    if (registrarProdcuto(sector)) {
-                        limpiar();
-                    }
+                    sector.setHabilitadoSector(1);
+                    sector.setNumeroSector(Integer.parseInt(numero.getText().toString()));
+                    registrarProdcuto(sector);
+                    limpiar();
+                 }
 
                     cargarLista();
+
+                }else{
+                    Toast.makeText(getApplicationContext(), "Faltan Datos", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
         adapter = new AdapterSector();
+
         adapter.setOnNoteSelectedListener(new AdapterSector.OnNoteSelectedListener() {
             @Override
-            public void onClick(Sector productodetalle) {
+            public void onClick(Sector dectordetalle) {
 
-                final Sector sector = productodetalle;
-
-                AlertDialog.Builder build = new AlertDialog.Builder(RegistroSectores.this);
-                build.setMessage("Opciones").setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
+                final Sector sector = dectordetalle;
                             nombre.setText(sector.getNombreSector());
-                            numero.setText(sector.getNumeroSector());
+                            numero.setText(""+sector.getNumeroSector());
                             color = (sector.getColorSector());
+                            idsector = sector.getIdSector();
                             asignarColor(color);
-                            btnregistrar.setText("Modificar");
+                            btnregistrar.setText("MODIFICAR");
+            }
 
-                    }
+        });
 
 
-                });
-                AlertDialog alertDialog = build.create();
-                alertDialog.show();
+        adapter.setOnDetailListener(new AdapterSector.OnNoteDetailListener() {
+            @Override
+            public void onDetail(Sector note) {
+
+                actualziar(note);
+                limpiar();
 
             }
         });
+
+
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewSectores);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
         cargarLista();
+
 
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
@@ -142,10 +158,18 @@ public class RegistroSectores extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
 
+        CloseTeclado();
 
+    }
 
+    private void CloseTeclado() {
 
+        View view = this.getCurrentFocus();
+        if (view != null){
 
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     private void botones() {
@@ -196,6 +220,7 @@ public class RegistroSectores extends AppCompatActivity {
         });
     }
 
+
    private void asignarColor(String colorelegido) {
        color = colorelegido;
        layoutPrincipal.setBackgroundColor(Color.parseColor(colorelegido));
@@ -235,11 +260,32 @@ public class RegistroSectores extends AppCompatActivity {
         }
     }
 
+    public boolean actualziar(Sector sector) {
+
+        try {
+            db = new SectorDB(this);
+            db.updateSector(sector);
+            return true;
+
+        } catch (Exception e) {
+            Log.e("error", "mensajeb");
+            return false;
+        }
+    }
+
     private void limpiar() {
 
         nombre.setText("");
         numero.setText("0");
         color = "#B30D0D";
+        idsector = 0;
+
+        //boton mejor
+        layoutPrincipal.setBackgroundColor(Color.parseColor(color));
+
+
         btnregistrar.setText("AÑADIR");
+        CloseTeclado();
+
     }
 }

@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".principal.dispensador.RegistroSectores"></activity>
+        <activity android:name=".principal.dispensador.DispensadorTurnoPrincipal"></activity>
         <activity android:name=".principal.dispensador.MainDispensador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

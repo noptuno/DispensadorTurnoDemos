@@ -18,7 +18,7 @@ public class Test extends AppCompatActivity {
 
 
 
-        setContentView(R.layout.activity_dispensador_turno2);
+        setContentView(R.layout.activity_main_dispensador);
 
 
         cons = findViewById(R.id.constrainturnodos);

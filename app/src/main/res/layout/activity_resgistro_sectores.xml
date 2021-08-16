@@ -18,16 +18,19 @@
         <LinearLayout
             android:id="@+id/layouprincipal"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="10dp"
-            android:background="#E91E1E"
+            android:layout_height="350dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/btn_fondo_color2"
+            android:backgroundTint="#9A3F3F"
             android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
@@ -35,31 +38,33 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Nombre:"
-                    android:textColor="#F6F0F0"
-                    android:textSize="20sp"
+                    android:layout_weight="3"
+                    android:text="Nombre Sector:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/etxtnombre"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
                     android:ems="10"
                     android:hint="Escriba el Sector"
                     android:inputType="textPersonName"
                     android:maxLength="15"
-                    android:textColor="#F6F0F0"
+                    android:textColor="#FFFFFF"
                     android:textColorHint="#A59B9B"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -68,67 +73,98 @@
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:text="Numero Turno"
-                    android:textColor="#F6F0F0"
-                    android:textSize="20sp"
+                    android:text="Número Turno"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/etxtnumero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:contentDescription="Solo números"
                     android:ems="10"
-                    android:hint="numero"
                     android:inputType="number"
+                    android:maxLength="2"
+                    android:phoneNumber="true"
                     android:text="0"
-                    android:textColor="#F6F0F0"
-                    android:textSize="24sp" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btnred"
-                    android:layout_width="50dp"
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#B30D0D" />
+                    android:text="Color seleccionado:"
+                    android:textColor="#FBF8F8"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnblue"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#2196F3" />
-
-                <Button
-                    android:id="@+id/btnorange"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#FF9800" />
+            <LinearLayout
+                android:id="@+id/layoutbotones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="#980606"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btngreen"
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:backgroundTint="#4CAF50" />
 
                 <Button
                     android:id="@+id/btnpurple"
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#673AB7" />
+                    android:backgroundTint="#673AB7"
+
+                    />
+
+                <Button
+                    android:id="@+id/btnred"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#B30D0D" />
+
+                <Button
+                    android:id="@+id/btnblue"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#2196F3" />
+
+                <Button
+                    android:id="@+id/btnorange"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FF9800" />
             </LinearLayout>
 
             <LinearLayout
@@ -142,10 +178,11 @@
                     android:id="@+id/btnnuevosector"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_fondo_color2"
-                    android:backgroundTint="#4A8FC3"
+                    android:backgroundTint="#404345"
                     android:text="NUEVO"
                     android:textColor="#FBFAFA"
                     android:textSize="20sp"
@@ -156,9 +193,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_fondo_color2"
-                    android:backgroundTint="#8BC34A"
+                    android:backgroundTint="#244A29"
                     android:text="AÑADIR"
                     android:textColor="#FAF8F8"
                     android:textSize="20sp"
@@ -168,11 +206,21 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Lista de Sectores:"
+            android:textSize="20sp" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewSectores"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="27dp" />
+            android:layout_marginStart="27dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 

@@ -61,6 +61,16 @@ public class SectorDB {
     }
 
 
+    public void updateSector(Sector sector) {
+
+        this.openWriteableDB();
+        String where = ConstantsDB.SEC_ID + "= ?";
+        db.update(ConstantsDB.TABLA_SECTOR, clienteMapperContentValues(sector), where, new String[]{String.valueOf(sector.getIdSector())});
+        db.close();
+    }
+
+
+
 
     public ArrayList loadSector() {
 
@@ -85,6 +95,34 @@ public class SectorDB {
         this.closeDB();
         return list;
     }
+
+    public ArrayList loadSectorDispensador() {
+
+        ArrayList<Sector> list = new ArrayList<>();
+        this.openReadableDB();
+        String desc = ConstantsDB.SEC_NOMBRE + "= ?";
+        String where = ConstantsDB.SEC_HABILITADO + "= ?";
+        String[] campos = new String[]{ConstantsDB.SEC_ID, ConstantsDB.SEC_NOMBRE, ConstantsDB.SEC_NUMERO,ConstantsDB.SEC_COLOR,ConstantsDB.SEC_HABILITADO};
+        Cursor c = db.query(ConstantsDB.TABLA_SECTOR, campos, where, new String[]{String.valueOf(1)}, null, null, desc +" DESC LIMIT 3");
+
+        try {
+            while (c.moveToNext()) {
+                Sector sector = new Sector();
+                sector.setIdSector(c.getInt(0));
+                sector.setNombreSector(c.getString(1));
+                sector.setNumeroSector(c.getInt(2));
+                sector.setColorSector(c.getString(3));
+                sector.setHabilitadoSector(c.getInt(4));
+                list.add(sector);
+            }
+        } finally {
+            c.close();
+        }
+        this.closeDB();
+        return list;
+    }
+
+
 
     private static class DBHelper extends SQLiteOpenHelper {
 

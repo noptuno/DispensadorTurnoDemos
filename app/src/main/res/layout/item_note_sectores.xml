@@ -41,7 +41,7 @@
 
             <TextView
                 android:id="@+id/textView1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Sector"
@@ -52,9 +52,9 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:text="Turno"
                 android:textAlignment="center"
                 android:textColor="#141717"
@@ -63,9 +63,9 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:text="Mostrar"
                 android:textAlignment="center"
                 android:textColor="#141717"
@@ -81,7 +81,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="10"
             android:backgroundTint="#EDEBEB"
-            android:gravity="center|center_horizontal"
+            android:gravity="left"
             android:orientation="horizontal">
 
             <TextView
@@ -109,11 +109,12 @@
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:checked="true"
                 android:gravity="center"
-                android:textColor="#F8F5F5" />
+                android:textColor="#F8F5F5"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
