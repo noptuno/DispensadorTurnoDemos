@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,14 +16,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gpp.devoluciondeenvases.R;
+import com.gpp.devoluciondeenvases.basededatos.SectorDB;
+import com.gpp.devoluciondeenvases.clases.Sector;
 import com.gpp.devoluciondeenvases.principal.MainActivity;
 import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 
-public class MainDispensador extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class MainDispensador extends AppCompatActivity {
+    private SectorDB db;
 
     private Button btnconfigurar, btniniciar;
-
+private int CantidadSectores = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +36,14 @@ public class MainDispensador extends AppCompatActivity {
         btnconfigurar = findViewById(R.id.btnconfigurar);
         btniniciar = findViewById(R.id.btniniciar);
 
-
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
+                in.putExtra("cantidadSectores", CantidadSectores);
                 startActivity(in);
+
+
             }
         });
 
@@ -47,11 +54,40 @@ public class MainDispensador extends AppCompatActivity {
                 startActivity(in);
             }
         });
+
+
+
+
     }
 
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        CantidadSectores = cargarLista();                              
+    }
 
+    private int cargarLista() {
+        int cantidad = 0;
+        try {
 
+            db = new SectorDB(this);
+            ArrayList<Sector> list = db.loadSectorDispensador();
 
+            ArrayList<Sector> list2;
+
+            for (Sector sector : list) {
+
+                if (sector.getHabilitadoSector()==1){
+                    Log.i("---> Base de datos: ", sector.toString());
+                    cantidad++;
+                }
+            }
+
+        } catch (Exception e) {
+            Log.e("error", "mensajed");
+        }
+        return cantidad;
+    }
 
 
     @Override

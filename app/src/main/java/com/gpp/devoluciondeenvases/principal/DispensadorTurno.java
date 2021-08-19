@@ -52,6 +52,8 @@ public class DispensadorTurno extends AppCompatActivity {
     private UsbInterface usbInterface;
     private UsbEndpoint usbEndpointIn = null;
     private UsbEndpoint usbEndpointOut = null;
+
+
     private Button btnimprimir,conectar;
     ConstraintLayout constrain;
     ActionBar actionBar;

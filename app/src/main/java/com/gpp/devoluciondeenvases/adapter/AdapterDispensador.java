@@ -19,6 +19,7 @@ import java.util.List;
 public class AdapterDispensador extends RecyclerView.Adapter<AdapterDispensador.NoteViewHolder> {
 
     private List<Sector> notes;
+    private int CantidadSectores;
     private OnNoteSelectedListener onNoteSelectedListener;
     private OnNoteDetailListener onDetailListener;
 
@@ -31,13 +32,27 @@ public class AdapterDispensador extends RecyclerView.Adapter<AdapterDispensador.
     }
 
 
+    public AdapterDispensador(int cantidad) {
+        this.notes = new ArrayList<>();
+        this.CantidadSectores = cantidad;
+    }
+
+
     @Override
     public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View elementoTitular = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_note_sectors_imprimir, parent, false);
+        View elementoTitular;
 
-        return new NoteViewHolder(elementoTitular);
+        if (CantidadSectores ==1){
+            elementoTitular = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_note_sectores_imprimir_uno, parent, false);
+
+        }else{
+            elementoTitular = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_note_sectors_imprimir, parent, false);
+        }
+
+        return new AdapterDispensador.NoteViewHolder(elementoTitular);
     }
 
     @Override
