@@ -53,6 +53,8 @@ public class RegistroSectores extends AppCompatActivity {
 
         botones();
 
+        CloseTeclado();
+
         btnregistrar= findViewById(R.id.btnregistarsector);
         nombre= findViewById(R.id.etxtnombre);
         numero= findViewById(R.id.etxtnumero);
@@ -158,7 +160,7 @@ public class RegistroSectores extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
 
-        CloseTeclado();
+
 
     }
 
@@ -166,11 +168,12 @@ public class RegistroSectores extends AppCompatActivity {
 
         View view = this.getCurrentFocus();
         if (view != null){
-
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+
     }
+
 
     private void botones() {
         final String red = "#B30D0D";

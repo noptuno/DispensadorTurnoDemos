@@ -18,8 +18,19 @@
         android:roundIcon="@mipmap/ic_logo_dmr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".principal.dispensador.RegistroSectores"></activity>
-        <activity android:name=".principal.dispensador.DispensadorTurnoPrincipal"></activity>
+
+        <activity android:name=".principal.dispensador.MensajeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            >
+
+        </activity>
+        <activity android:name=".principal.dispensador.RegistroSectores"
+            android:label="Registrar Sectores"
+            android:windowSoftInputMode="stateHidden"/>
+
+
+        <activity android:name=".principal.dispensador.DispensadorTurnoPrincipal" />
         <activity android:name=".principal.dispensador.MainDispensador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,8 +48,8 @@
         </activity>
         <activity
             android:name=".principal.DevoluciondeEnvases"
-            android:theme="@style/AppThemeSinbarra" />
-        <activity android:name=".principal.MainActivity"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".principal.MainActivity" />
     </application>
 
 </manifest>

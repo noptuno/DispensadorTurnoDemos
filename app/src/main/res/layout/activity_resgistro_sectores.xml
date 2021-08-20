@@ -9,6 +9,11 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/backgroudefecto"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,10 +23,8 @@
         <LinearLayout
             android:id="@+id/layouprincipal"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/btn_fondo_color2"
-            android:backgroundTint="#9A3F3F"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -37,11 +40,12 @@
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:gravity="center"
                     android:text="Nombre Sector:"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
+                    android:textColor="#F6F4F4"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -50,13 +54,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:ems="10"
-                    android:hint="Escriba el Sector"
+                    android:hint="Nombre del Sector"
                     android:inputType="textPersonName|textCapCharacters"
                     android:maxLength="13"
                     android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#A59B9B"
-                    android:textSize="24sp"
+                    android:textColor="#F6F4F4"
+                    android:textColorHighlight="#F4EFEF"
+                    android:textColorHint="#A59F9F"
+                    android:textColorLink="#F6F2F2"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -73,13 +79,14 @@
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_weight="2"
-                    android:text="Número Turno"
+                    android:layout_weight="3"
+                    android:gravity="center"
 
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
+                    android:text="Número Turno"
+                    android:textColor="#F6F4F4"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -87,15 +94,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_weight="5"
+                    android:layout_weight="2"
                     android:contentDescription="Solo números"
                     android:ems="10"
+                    android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
                     android:phoneNumber="true"
                     android:text="0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="34sp"
+                    android:textColor="#F6F4F4"
+                    android:textColorHint="#A59F9F"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -114,8 +123,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Color seleccionado:"
-                    android:textColor="#FBF8F8"
-                    android:textSize="24sp"
+                    android:textColor="#F8F5F5"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -126,7 +135,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_weight="1"
-                android:background="#980606"
+                android:background="#B30D0D"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -178,7 +187,7 @@
                 <Button
                     android:id="@+id/btnnuevosector"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
@@ -192,7 +201,7 @@
                 <Button
                     android:id="@+id/btnregistarsector"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
@@ -213,6 +222,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="Lista de Sectores:"
+            android:textColor="#F4F0F0"
             android:textSize="20sp" />
 
         <androidx.recyclerview.widget.RecyclerView

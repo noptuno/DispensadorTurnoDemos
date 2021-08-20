@@ -1,21 +1,32 @@
 package com.gpp.devoluciondeenvases.principal.dispensador;
 
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbEndpoint;
 import android.hardware.usb.UsbInterface;
 import android.hardware.usb.UsbManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -53,6 +64,9 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
     private Context context;
     private int CantidadSectores =0;
 
+    MediaPlayer click, click2;
+    Context contexto;
+    static final int MENSAJERESULT = 0;
     private SectorDB db;
     ConstraintLayout constrain;
     ActionBar actionBar;
@@ -65,6 +79,9 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_dispensador_turno_principal);
         constrain = findViewById(R.id.constrainturnodos);
         context = getApplicationContext();
+        contexto = this;
+        click = MediaPlayer.create(contexto, R.raw.fin);
+        click2 = MediaPlayer.create(contexto, R.raw.ckickk);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -86,8 +103,13 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
             @Override
             public void onClick(Sector note) {
                 if (permisosimpresora){
+
                     if (impresoraactiva){
+
+                        click2.start();
+                        mostrarEspera(note);
                         imprimirNumero(note);
+
                     }else{
                         Toast.makeText(DispensadorTurnoPrincipal.this, "No se ha conectado la impresora (recinicie la app)", Toast.LENGTH_LONG).show();
                     }
@@ -103,86 +125,119 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
 
 
 
-    private void imprimirNumero(Sector sector) {
+    private void imprimirNumero(final Sector sector) {
 
-        byte[] printData = {0};
-        String nombreSector = sector.getNombreSector();
-        int numeroactual = sector.getNumeroSector();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy", Locale.getDefault());
-        Date date = new Date();
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
 
-        String fecha = dateFormat.format(date);
+                try {
+                    byte[] printData = {0};
+                    String nombreSector = sector.getNombreSector();
+                    int numeroactual = sector.getNumeroSector();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy", Locale.getDefault());
+                    Date date = new Date();
 
-        //animacion.setVisibility(View.VISIBLE);
-        //btnimprimir.setEnabled(false);
+                    String fecha = dateFormat.format(date);
 
-        Charset encoding = Charset.forName("CP437");
+                    //animacion.setVisibility(View.VISIBLE);
+                    //btnimprimir.setEnabled(false);
 
-        byte[] nombreproducto = "Su Turno es: ".getBytes(encoding);
-        byte[] numeroimprimir = ("" + numeroactual).getBytes();
+                    Charset encoding = Charset.forName("CP437");
 
-        Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_logo_dmrcirculo);
+                    byte[] nombreproducto = "Su Turno es: ".getBytes(encoding);
+                    byte[] numeroimprimir = ("" + numeroactual).getBytes();
 
-        ICommandBuilder builder = StarIoExt.createCommandBuilder(StarIoExt.Emulation.EscPos);
-        builder.appendCodePage(ICommandBuilder.CodePageType.UTF8);
-        builder.beginDocument();
-        //builder.appendBitmap(starLogoImage, false);
-        // builder.appendLineFeed();
+                    Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_logo_dmrcirculo);
 
-        //*********************************
-        builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
-        builder.appendMultiple(3, 3);
-        builder.appendAbsolutePosition(nombreSector.getBytes(), 0);
-        builder.appendLineFeed(1);
+                    ICommandBuilder builder = StarIoExt.createCommandBuilder(StarIoExt.Emulation.EscPos);
+                    builder.appendCodePage(ICommandBuilder.CodePageType.UTF8);
+                    builder.beginDocument();
+                    //builder.appendBitmap(starLogoImage, false);
+                    // builder.appendLineFeed();
 
-        builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
-        builder.appendMultiple(1, 1);
-        builder.appendAbsolutePosition(nombreproducto, 0);
-        builder.appendLineFeed();
-        builder.appendLineSpace(50);
-        builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
-        builder.appendMultiple(10, 10);
-        builder.appendAbsolutePosition(numeroimprimir, 0);
-        builder.appendLineFeed();
-        builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    //*********************************
+                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendMultiple(3, 3);
+                    builder.appendAbsolutePosition(nombreSector.getBytes(), 0);
+                    builder.appendLineFeed(1);
 
-        builder.appendMultiple(0, 0);
-        builder.appendAbsolutePosition(("Fecha: " + fecha).getBytes(), 0);
-        builder.appendLineFeed();
-        //**********************
+                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendMultiple(1, 1);
+                    builder.appendAbsolutePosition(nombreproducto, 0);
+                    builder.appendLineFeed();
+                    builder.appendLineSpace(50);
+                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendMultiple(10, 10);
+                    builder.appendAbsolutePosition(numeroimprimir, 0);
+                    builder.appendLineFeed();
+                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
 
-        builder.appendCutPaper(ICommandBuilder.CutPaperAction.PartialCutWithFeed);
-        builder.endDocument();
-        printData = builder.getCommands();
+                    builder.appendMultiple(0, 0);
+                    builder.appendAbsolutePosition(("Fecha: " + fecha).getBytes(), 0);
+                    builder.appendLineFeed();
+                    //**********************
 
+                    builder.appendCutPaper(ICommandBuilder.CutPaperAction.PartialCutWithFeed);
+                    builder.endDocument();
+                    printData = builder.getCommands();
 
-        try {
+                    if (connection != null) {
+                        int result = connection.bulkTransfer(usbEndpointOut, printData, printData.length, 1000);
+                        if (result != -1) {
 
-            if (connection != null) {
-                int result = connection.bulkTransfer(usbEndpointOut, printData, printData.length, 1000);
-                if (result != -1) {
+                            int numero = imcrementar(numeroactual);
+                            sector.setNumeroSector(numero);
 
-                    int numero = imcrementar(numeroactual);
-                    sector.setNumeroSector(numero);
+                            if (actualziar(sector)){
 
-                    if (actualziar(sector)){
-                        cargarLista();
+                                cargarLista();
+
+                            }
+
+                        } else {
+                            Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR A: imprimir", Toast.LENGTH_LONG).show();
+                        }
                     }
 
-                } else {
-                    Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR A: imprimir", Toast.LENGTH_LONG).show();
+
+                } catch (Exception e) {
+                    Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR B: imprimir", Toast.LENGTH_LONG).show();
+
                 }
+
             }
 
-            // btnimprimir.setEnabled(true);
-            //animacion.setVisibility(View.INVISIBLE);
+        }, 1500);
 
-        } catch (Exception e) {
-            Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR B: imprimir", Toast.LENGTH_LONG).show();
-            //btnimprimir.setEnabled(true);
-            //animacion.setVisibility(View.INVISIBLE);
+    }
+
+
+    private void mostrarEspera(Sector nota) {
+        Intent v = new Intent(DispensadorTurnoPrincipal.this, MensajeActivity.class);
+        v.putExtra("numeroSector", nota.getNumeroSector());
+        v.putExtra("nombreSector", nota.getNombreSector());
+        startActivityForResult(v, MENSAJERESULT);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+
+            case MENSAJERESULT: {
+                if (resultCode == RESULT_OK) {
+
+                    Log.e("RECIBIDO", "OK");
+                }
+                break;
+            }
         }
     }
+
+
 
     private int imcrementar(int ultimonumero){
         int LIMIT_CANTIDAD = 100;
@@ -262,16 +317,16 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
 
             if (connection != null && connection.claimInterface(usbInterface, true)) {
                 impresoraactiva = true;
-                Toast.makeText(DispensadorTurnoPrincipal.this, "Conectado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DispensadorTurnoPrincipal.this, "Impresora Conectada", Toast.LENGTH_SHORT).show();
             }else{
                 impresoraactiva = false;
-                Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR C conectar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR Impresora", Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception var2) {
 
             impresoraactiva = false;
-            Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR D conectar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DispensadorTurnoPrincipal.this, "ERROR USB Impresora", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -339,7 +394,7 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        hidebarras();
+       hidebarras();
 
     }
 

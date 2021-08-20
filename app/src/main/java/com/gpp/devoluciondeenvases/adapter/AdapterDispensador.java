@@ -47,10 +47,16 @@ public class AdapterDispensador extends RecyclerView.Adapter<AdapterDispensador.
             elementoTitular = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_note_sectores_imprimir_uno, parent, false);
 
+        }else if (CantidadSectores ==2){
+            elementoTitular = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_note_sectores_imprimir_dos, parent, false);
         }else{
+
             elementoTitular = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_note_sectors_imprimir, parent, false);
         }
+
+
 
         return new AdapterDispensador.NoteViewHolder(elementoTitular);
     }

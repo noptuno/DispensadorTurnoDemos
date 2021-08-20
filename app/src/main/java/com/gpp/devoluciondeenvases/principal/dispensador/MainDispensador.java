@@ -14,10 +14,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gpp.devoluciondeenvases.R;
 import com.gpp.devoluciondeenvases.basededatos.SectorDB;
 import com.gpp.devoluciondeenvases.clases.Sector;
+import com.gpp.devoluciondeenvases.principal.DevoluciondeEnvases;
 import com.gpp.devoluciondeenvases.principal.MainActivity;
 import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 
@@ -39,9 +41,16 @@ private int CantidadSectores = 0;
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
-                in.putExtra("cantidadSectores", CantidadSectores);
-                startActivity(in);
+
+                if (CantidadSectores>0){
+                    Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
+                    in.putExtra("cantidadSectores", CantidadSectores);
+                    startActivity(in);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                }else{
+                    Toast.makeText(MainDispensador.this, "Debe Registrar o Habilitar al menos 1 Sector", Toast.LENGTH_LONG).show();
+                }
+
 
 
             }
@@ -52,6 +61,7 @@ private int CantidadSectores = 0;
             public void onClick(View view) {
                 Intent in = new Intent(MainDispensador.this, RegistroSectores.class);
                 startActivity(in);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -102,6 +112,7 @@ private int CantidadSectores = 0;
 
             case R.id.idregistrar:
                 Intent in = new Intent(MainDispensador.this, RegistroSectores.class);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                 startActivity(in);
                 break;
             case R.id.idaydua:
@@ -135,7 +146,7 @@ private int CantidadSectores = 0;
                         + " Version Code:"
                         + String.valueOf(pinfo.versionCode) + "\n"
                         + " Version Name:" + pinfo.versionName+"\n"
-                        + " Copyright: 2018" + "\n"
+                        + " Copyright: 2021" + "\n"
                         + " Lipiner S.A (DMR mil rollos)" + "\r\n"
                         + " Dirección: Convenio 828"  + "\r\n"
                         + " Teléfono: (+598) 2209 19 21"  + "\r\n"
