@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_configurar_app.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_dispensador_turno_principal.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_main_dispensador.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_mensaje.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_registrar_producto.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/activity_resgistro_sectores.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/item_note_devolucion.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/item_note_producto.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/item_note_sectores.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/item_note_sectores_imprimir_dos.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/david/AndroidStudioProjects/DEMOS/DispensdorGit/app/src/main/res/layout/item_note_sectores_imprimir_uno.xml" value="0.22146739130434784" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
