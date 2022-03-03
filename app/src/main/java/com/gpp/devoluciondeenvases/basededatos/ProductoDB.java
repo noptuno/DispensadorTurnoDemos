@@ -5,11 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
+import android.graphics.Bitmap;
 import android.util.Log;
 
 
 import com.gpp.devoluciondeenvases.clases.Producto;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class ProductoDB {
@@ -37,15 +40,13 @@ public class ProductoDB {
 
     private ContentValues clienteMapperContentValues(Producto producto) {
         ContentValues cv = new ContentValues();
-
         cv.put(ConstantsDB.PRO_IDPRODUCTO, producto.getIdProducto());
         cv.put(ConstantsDB.PRO_DESCRIPCION, producto.getDescripcion());
         cv.put(ConstantsDB.PRO_PRECIO, producto.getPrecio());
         cv.put(ConstantsDB.PRO_CANTIDAD, producto.getCantidad());
-
         return cv;
-    }
 
+    }
 
 
 
