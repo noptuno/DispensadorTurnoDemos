@@ -1,4 +1,4 @@
-package com.gpp.devoluciondeenvases.principal.dispensador;
+package com.gpp.devoluciondeenvases.principal.principal;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,23 +19,19 @@ import android.widget.Toast;
 import com.gpp.devoluciondeenvases.R;
 import com.gpp.devoluciondeenvases.basededatos.SectorDB;
 import com.gpp.devoluciondeenvases.clases.Sector;
-import com.gpp.devoluciondeenvases.principal.DevoluciondeEnvases;
-import com.gpp.devoluciondeenvases.principal.MainActivity;
-import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 
 import java.util.ArrayList;
 
 public class MainDispensador extends AppCompatActivity {
     private SectorDB db;
 
-    private Button btnconfigurar, btniniciar;
+    private Button btniniciar;
 private int CantidadSectores = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dispensador);
 
-        btnconfigurar = findViewById(R.id.btnconfigurar);
         btniniciar = findViewById(R.id.btniniciar);
 
         btniniciar.setOnClickListener(new View.OnClickListener() {
@@ -55,16 +51,6 @@ private int CantidadSectores = 0;
 
             }
         });
-
-        btnconfigurar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(MainDispensador.this, RegistroSectores.class);
-                startActivity(in);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
-
 
 
 
@@ -108,10 +94,18 @@ private int CantidadSectores = 0;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent in;
         switch (item.getItemId()) {
 
-            case R.id.idregistrar:
-                Intent in = new Intent(MainDispensador.this, RegistroSectores.class);
+            case R.id.idconfigurar:
+                in = new Intent(MainDispensador.this, Configuracion.class);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                startActivity(in);
+                break;
+
+            case R.id.idsector:
+
+                in = new Intent(MainDispensador.this, RegistroSectores.class);
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                 startActivity(in);
                 break;
@@ -121,7 +115,6 @@ private int CantidadSectores = 0;
 
             case R.id.idsalir:
                 finish();
-
                 break;
 
 

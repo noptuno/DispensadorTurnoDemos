@@ -326,7 +326,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/check/baseline_check_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../David%20Garcia/AppData/Local/Android/Sdk/icons/material/materialicons/play_arrow/baseline_play_arrow_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -336,7 +336,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_succes" />
+                            <entry key="outputName" value="ic_play" />
                             <entry key="sourceFile" value="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit" />
                           </map>
                         </option>

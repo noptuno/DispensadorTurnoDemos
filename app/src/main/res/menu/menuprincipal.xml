@@ -2,8 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/idregistrar"
-        android:title="Registrar Sectores" />
+        android:id="@+id/idconfigurar"
+        android:title="Configuración" />
+    <item
+        android:id="@+id/idsector"
+        android:title="Sectores" />
     <item
         android:id="@+id/idaydua"
         android:title="Ayuda" />

@@ -12,12 +12,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gpp.devoluciondeenvases.R;
 
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.idregistrar:
+            case R.id.idconfigurar:
                 Intent in = new Intent(MainActivity.this, RegistrarProducto.class);
                 startActivity(in);
                 break;

@@ -1,15 +1,14 @@
-package com.gpp.devoluciondeenvases.principal.dispensador;
+package com.gpp.devoluciondeenvases.principal.principal;
 
-import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.ColorDrawable;
 import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
@@ -22,14 +21,12 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -63,7 +60,7 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
     private boolean impresoraactiva = false;
     private Context context;
     private int CantidadSectores =0;
-
+private Button configurarnuevamente;
     MediaPlayer click, click2;
     Context contexto;
     static final int MENSAJERESULT = 0;
@@ -91,12 +88,12 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
             CantidadSectores = 0;
         }
 
+
         adapter = new AdapterDispensador(CantidadSectores);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerviewprincipal);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
         cargarLista();
-
         usb();
 
         adapter.setOnNoteSelectedListener(new AdapterDispensador.OnNoteSelectedListener() {
@@ -121,10 +118,82 @@ public class DispensadorTurnoPrincipal extends AppCompatActivity {
         });
 
 
+        configurarnuevamente = findViewById(R.id.btn_salir);
+
+        configurarnuevamente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                botonregresar();
+
+
+            }
+        });
+
+
     }
 
+    @Override
+    public void onBackPressed() {
+
+        botonregresar();
+        // super.onBackPressed();
+
+    }
+
+    private void botonregresar() {
+
+        // load the dialog_promt_user.xml layout and inflate to view
+        LayoutInflater layoutinflater = LayoutInflater.from(getApplicationContext());
+        View promptUserView = layoutinflater.inflate(R.layout.dialog_activity_pass, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(DispensadorTurnoPrincipal.this);
+
+        alertDialogBuilder.setView(promptUserView);
+
+        final EditText userAnswer = (EditText) promptUserView.findViewById(R.id.username);
+
+        alertDialogBuilder.setTitle("Usuario Administrador: ");
+
+        // prompt for username
+        alertDialogBuilder.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // and display the username on main activity layout
 
 
+                if (!userAnswer.equals("") && userAnswer.getText().length()>0){
+
+                    if (validaryguardar(userAnswer.getText().toString())){
+
+                        DispensadorTurnoPrincipal.this.finish();
+
+                    }else{
+
+                        Toast.makeText(getApplicationContext(), "Contraseña Incorrecta", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+            }
+        });
+
+        // all set and time to build and show up!
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+        userAnswer.requestFocus();
+
+
+    }
+
+    private boolean validaryguardar(String pass){
+        boolean v = false;
+        if (pass.equals("dmr")){
+            v = true;
+        }
+
+        return v;
+    }
     private void imprimirNumero(final Sector sector) {
 
         new Handler().postDelayed(new Runnable(){

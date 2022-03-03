@@ -1,14 +1,12 @@
-package com.gpp.devoluciondeenvases.principal.dispensador;
+package com.gpp.devoluciondeenvases.principal.principal;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gpp.devoluciondeenvases.R;

@@ -1,17 +1,13 @@
-package com.gpp.devoluciondeenvases.principal.dispensador;
+package com.gpp.devoluciondeenvases.principal.principal;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -21,18 +17,11 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.gpp.devoluciondeenvases.R;
-import com.gpp.devoluciondeenvases.adapter.AdapterProducto;
 import com.gpp.devoluciondeenvases.adapter.AdapterSector;
-import com.gpp.devoluciondeenvases.basededatos.ProductoDB;
 import com.gpp.devoluciondeenvases.basededatos.SectorDB;
-import com.gpp.devoluciondeenvases.clases.Producto;
 import com.gpp.devoluciondeenvases.clases.Sector;
-import com.gpp.devoluciondeenvases.principal.RegistrarProducto;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.IllegalFormatCodePointException;
 
 public class RegistroSectores extends AppCompatActivity {
     private AdapterSector adapter;
