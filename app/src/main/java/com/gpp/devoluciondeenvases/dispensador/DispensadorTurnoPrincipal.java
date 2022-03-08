@@ -216,13 +216,18 @@ private Button configurarnuevamente;
                     byte[] nombreproducto = "Su Turno es: ".getBytes(encoding);
                     byte[] numeroimprimir = ("" + numeroactual).getBytes();
 
-                    Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_logo_dmrcirculo);
+                    Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.logodiscopeque);
 
                     ICommandBuilder builder = StarIoExt.createCommandBuilder(StarIoExt.Emulation.EscPos);
+
+
                     builder.appendCodePage(ICommandBuilder.CodePageType.UTF8);
                     builder.beginDocument();
-                    //builder.appendBitmap(starLogoImage, false);
-                    // builder.appendLineFeed();
+                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendBitmap(starLogoImage, false);
+                    builder.appendLineFeed();
+
+
 
                     //*********************************
                     builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
@@ -285,6 +290,7 @@ private Button configurarnuevamente;
         Intent v = new Intent(DispensadorTurnoPrincipal.this, MensajeActivity.class);
         v.putExtra("numeroSector", nota.getNumeroSector());
         v.putExtra("nombreSector", nota.getNombreSector());
+        v.putExtra("colorSector", nota.getColorSector());
         startActivityForResult(v, MENSAJERESULT);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 

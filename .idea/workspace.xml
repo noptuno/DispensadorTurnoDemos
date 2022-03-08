@@ -13,67 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/clases/Datos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logodisco.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_airbnb_android_lottie_3_5_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_airbnb_android_lottie_3_5_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_2_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/bootapp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/logodiscopeque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_2_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/DispensadorTurno.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/DispensadorTurno.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/adapter/AdapterSector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/adapter/AdapterSector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/ConstantsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/ConstantsDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/SectorDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/basededatos/SectorDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/clases/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/clases/Sector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/DevoluciondeEnvases.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/envases/DevoluciondeEnvases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/DispensadorTurno.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/envases/DispensadorTurno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/envases/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/RegistrarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/envases/RegistrarProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/envases/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/principal/Configuracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/Configuracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/principal/DispensadorTurnoPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/DispensadorTurnoPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/principal/FileBrowseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/FileBrowseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/principal/MainDispensador.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MainDispensador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/principal/MensajeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MensajeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/principal/principal/RegistroSectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/RegistroSectores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_configurar_app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_configurar_app.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_devolucionde_envases.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_devolucionde_envases.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mensaje.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mensaje.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_registrar_producto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registrar_producto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/DispensadorTurnoPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/DispensadorTurnoPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MainDispensador.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MainDispensador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MensajeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MensajeActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[QQJRKBXGFH]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\david\.android\avd\Pixel_2_API_24.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -120,6 +77,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1djFyJpH4D4dKywHLcWLZL4Fnb3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -134,19 +99,39 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-16T20:10:36.884Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="android-custom-viewC:/Users/david/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DISCO" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.gpp.devoluciondeenvases.adapter" />
-      <recent name="com.gpp.devoluciondeenvases.basededatos" />
-      <recent name="com.gpp.devoluciondeenvases.clases" />
+    <key name="android.template.306471783">
+      <recent name="com.gpp.devoluciondeenvases.principal" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\david\AndroidStudioProjects\DEMOS\DispensadorTurno\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res\anim" />
+      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res" />
+      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res\values" />
+      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res\drawable" />
+    </key>
+    <key name="android.template.-813591224">
+      <recent name="com.gpp.devoluciondeenvases.principal" />
+      <recent name="com.gpp.devoluciondeenvases" />
+    </key>
+    <key name="android.template.-462355292">
+      <recent name="com.gpp.devoluciondeenvases.principal.dispensador" />
+    </key>
+    <key name="android.template.-1580455863">
+      <recent name="com.gpp.devoluciondeenvases.principal" />
     </key>
     <key name="android.template.1345062204">
       <recent name="com.gpp.devoluciondeenvases.principal.dispensador" />
@@ -154,28 +139,14 @@
       <recent name="com.gpp.devoluciondeenvases.principal.fragments" />
       <recent name="com.gpp.devoluciondeenvases.principal.fragements" />
     </key>
-    <key name="android.template.-813591224">
-      <recent name="com.gpp.devoluciondeenvases.principal" />
-      <recent name="com.gpp.devoluciondeenvases" />
-    </key>
-    <key name="android.template.306471783">
-      <recent name="com.gpp.devoluciondeenvases.principal" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res\anim" />
-      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res" />
-      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res\values" />
-      <recent name="C:\Users\david\AndroidStudioProjects\DemosVendedores\DispensdorGit\app\src\main\res\drawable" />
-      <recent name="C:\Users\david\AndroidStudioProjects\DEMOS\DispensadorTurno\app\src\main\res\layout" />
-    </key>
-    <key name="android.template.-1580455863">
-      <recent name="com.gpp.devoluciondeenvases.principal" />
-    </key>
-    <key name="android.template.-462355292">
-      <recent name="com.gpp.devoluciondeenvases.principal.dispensador" />
-    </key>
     <key name="android.template.899514868">
       <recent name="com.gpp.devoluciondeenvases.principal" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gpp.devoluciondeenvases.dispensador" />
+      <recent name="com.gpp.devoluciondeenvases.adapter" />
+      <recent name="com.gpp.devoluciondeenvases.basededatos" />
+      <recent name="com.gpp.devoluciondeenvases.clases" />
     </key>
   </component>
   <component name="RunManager">
@@ -300,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629478923214</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="8/03/2022 modificaciones carpetas">
+      <created>1646742110372</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646742110373</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -348,6 +326,7 @@
         <entry key="6a7ae058-8b25-40b0-89e5-1346c3205bef" value="TOOL_WINDOW" />
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="actualizndo module" />
@@ -355,7 +334,8 @@
     <MESSAGE value="diseño" />
     <MESSAGE value="diseñando" />
     <MESSAGE value="20/08/2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="20/08/2021" />
+    <MESSAGE value="8/03/2022 modificaciones carpetas" />
+    <option name="LAST_COMMIT_MESSAGE" value="8/03/2022 modificaciones carpetas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

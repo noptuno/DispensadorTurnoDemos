@@ -18,6 +18,15 @@
         android:roundIcon="@mipmap/ic_logo_dmr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver android:name=".dispensador.bootapp">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+
         <activity
             android:name=".dispensador.Configuracion"
             android:exported="false" />

@@ -51,7 +51,15 @@ private int CantidadSectores = 0;
 
             }
         });
-
+        CantidadSectores = cargarLista();
+        if (CantidadSectores>0){
+            Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
+            in.putExtra("cantidadSectores", CantidadSectores);
+            startActivity(in);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }else{
+            Toast.makeText(MainDispensador.this, "Debe Registrar o Habilitar al menos 1 Sector", Toast.LENGTH_LONG).show();
+        }
 
 
     }
@@ -59,7 +67,8 @@ private int CantidadSectores = 0;
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        CantidadSectores = cargarLista();                              
+        CantidadSectores = cargarLista();
+
     }
 
     private int cargarLista() {
