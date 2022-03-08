@@ -2,8 +2,8 @@ package com.gpp.devoluciondeenvases.basededatos;
 
 public class ConstantsDB {
     //General
-    public static final String DB_NAME = "dbgeneral1.db";
-    public static final int DB_VERSION = 1;
+    public static final String DB_NAME = "dbgeneral2.db";
+    public static final int DB_VERSION = 2;
 
 
 
@@ -29,7 +29,7 @@ public class ConstantsDB {
     public static final String SEC_NUMERO = "numeroSector";
     public static final String SEC_HABILITADO = "habilitadoSector";
     public static final String SEC_COLOR = "colorSector";
-
+    public static final String SEC_IP = "ip";
 
     public static final String TABLA_SECTOR_SQL =
             "CREATE TABLE  " + TABLA_SECTOR + "(" +
@@ -37,7 +37,8 @@ public class ConstantsDB {
                     SEC_NOMBRE + " TEXT," +
                     SEC_NUMERO + " INTEGER," +
                     SEC_HABILITADO + " INTEGER," +
-                    SEC_COLOR  + " TEXT);" ;
+                    SEC_COLOR + " TEXT," +
+                    SEC_IP  + " TEXT);" ;
 
 
 

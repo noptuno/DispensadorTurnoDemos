@@ -1,4 +1,4 @@
-package com.gpp.devoluciondeenvases.principal;
+package com.gpp.devoluciondeenvases.envases;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

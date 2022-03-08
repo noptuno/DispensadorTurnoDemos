@@ -1,6 +1,6 @@
-package com.gpp.devoluciondeenvases.principal.principal;
+package com.gpp.devoluciondeenvases.dispensador;
 
-import static com.gpp.devoluciondeenvases.principal.principal.FileBrowseActivity.calculateInSampleSize;
+import static com.gpp.devoluciondeenvases.dispensador.FileBrowseActivity.calculateInSampleSize;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,13 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.gpp.devoluciondeenvases.R;

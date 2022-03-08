@@ -1,4 +1,4 @@
-package com.gpp.devoluciondeenvases.principal.principal;
+package com.gpp.devoluciondeenvases.dispensador;
 
 import android.Manifest;
 import android.content.Context;

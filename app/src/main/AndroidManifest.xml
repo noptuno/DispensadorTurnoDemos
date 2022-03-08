@@ -19,28 +19,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".principal.principal.Configuracion"
+            android:name=".dispensador.Configuracion"
             android:exported="false" />
         <activity
-            android:name=".principal.principal.MensajeActivity"
+            android:name=".dispensador.MensajeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
-            android:name=".principal.principal.RegistroSectores"
+            android:name=".dispensador.RegistroSectores"
             android:label="Registrar Sectores"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".principal.principal.DispensadorTurnoPrincipal" />
-        <activity android:name=".principal.principal.MainDispensador">
+        <activity android:name=".dispensador.DispensadorTurnoPrincipal" />
+        <activity android:name=".dispensador.MainDispensador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".principal.DispensadorTurno" />
-        <activity android:name=".principal.Test" />
+        <activity android:name=".envases.DispensadorTurno" />
+        <activity android:name=".envases.Test" />
         <activity
-            android:name="com.gpp.devoluciondeenvases.principal.principal.FileBrowseActivity"
+            android:name=".dispensador.FileBrowseActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:theme="@style/AppThemeSinbarra">
@@ -50,15 +50,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".principal.RegistrarProducto">
+        <activity android:name=".envases.RegistrarProducto">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.gpp.devoluciondeenvases.principal.MainActivity" />
+                android:value="com.gpp.devoluciondeenvases.envases.MainActivity" />
         </activity>
         <activity
-            android:name=".principal.DevoluciondeEnvases"
+            android:name=".envases.DevoluciondeEnvases"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".principal.MainActivity" />
+        <activity android:name=".envases.MainActivity" />
     </application>
 
 </manifest>

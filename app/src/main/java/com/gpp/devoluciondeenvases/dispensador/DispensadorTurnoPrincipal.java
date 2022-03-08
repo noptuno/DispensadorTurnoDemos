@@ -1,4 +1,4 @@
-package com.gpp.devoluciondeenvases.principal.principal;
+package com.gpp.devoluciondeenvases.dispensador;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.usb.UsbConstants;

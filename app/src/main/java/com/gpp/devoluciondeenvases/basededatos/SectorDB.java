@@ -43,6 +43,7 @@ public class SectorDB {
         cv.put(ConstantsDB.SEC_NUMERO, sectores.getNumeroSector());
         cv.put(ConstantsDB.SEC_HABILITADO, sectores.getHabilitadoSector());
         cv.put(ConstantsDB.SEC_COLOR, sectores.getColorSector());
+        cv.put(ConstantsDB.SEC_IP   , sectores.getIp());
         return cv;
     }
 
@@ -76,7 +77,7 @@ public class SectorDB {
 
         ArrayList<Sector> list = new ArrayList<>();
         this.openReadableDB();
-        String[] campos = new String[]{ConstantsDB.SEC_ID, ConstantsDB.SEC_NOMBRE, ConstantsDB.SEC_NUMERO,ConstantsDB.SEC_COLOR,ConstantsDB.SEC_HABILITADO};
+        String[] campos = new String[]{ConstantsDB.SEC_ID, ConstantsDB.SEC_NOMBRE, ConstantsDB.SEC_NUMERO,ConstantsDB.SEC_COLOR,ConstantsDB.SEC_HABILITADO,ConstantsDB.SEC_IP};
         Cursor c = db.query(ConstantsDB.TABLA_SECTOR, campos, null, null, null, null, null);
 
         try {
@@ -87,6 +88,7 @@ public class SectorDB {
                 sector.setNumeroSector(c.getInt(2));
                 sector.setColorSector(c.getString(3));
                 sector.setHabilitadoSector(c.getInt(4));
+                sector.setIp(c.getString(5));
                 list.add(sector);
             }
         } finally {
@@ -102,7 +104,7 @@ public class SectorDB {
         this.openReadableDB();
         String desc = ConstantsDB.SEC_NOMBRE + "= ?";
         String where = ConstantsDB.SEC_HABILITADO + "= ?";
-        String[] campos = new String[]{ConstantsDB.SEC_ID, ConstantsDB.SEC_NOMBRE, ConstantsDB.SEC_NUMERO,ConstantsDB.SEC_COLOR,ConstantsDB.SEC_HABILITADO};
+        String[] campos = new String[]{ConstantsDB.SEC_ID, ConstantsDB.SEC_NOMBRE, ConstantsDB.SEC_NUMERO,ConstantsDB.SEC_COLOR,ConstantsDB.SEC_HABILITADO,ConstantsDB.SEC_IP};
         Cursor c = db.query(ConstantsDB.TABLA_SECTOR, campos, where, new String[]{String.valueOf(1)}, null, null, desc +" DESC LIMIT 3");
 
         try {
@@ -113,6 +115,7 @@ public class SectorDB {
                 sector.setNumeroSector(c.getInt(2));
                 sector.setColorSector(c.getString(3));
                 sector.setHabilitadoSector(c.getInt(4));
+                sector.setIp(c.getString(5));
                 list.add(sector);
             }
         } finally {

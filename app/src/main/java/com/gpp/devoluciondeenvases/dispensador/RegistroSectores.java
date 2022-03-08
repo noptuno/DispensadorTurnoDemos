@@ -1,4 +1,4 @@
-package com.gpp.devoluciondeenvases.principal.principal;
+package com.gpp.devoluciondeenvases.dispensador;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;

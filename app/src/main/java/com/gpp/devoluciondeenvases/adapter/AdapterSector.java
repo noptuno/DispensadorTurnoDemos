@@ -115,6 +115,7 @@ public class AdapterSector extends RecyclerView.Adapter<AdapterSector.NoteViewHo
             numero.setText(""+sector.getNumeroSector());
             layout.setBackgroundColor(Color.parseColor(sector.getColorSector()));
 
+
             if (sector.getHabilitadoSector() == 1){
                 checkBox.setChecked(true);
             }else{
