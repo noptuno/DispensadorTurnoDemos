@@ -1,39 +1,50 @@
 package com.gpp.devoluciondeenvases.dispensador;
 
+import static com.gpp.devoluciondeenvases.dispensador.FileBrowseActivity.calculateInSampleSize;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialog;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gpp.devoluciondeenvases.R;
 import com.gpp.devoluciondeenvases.basededatos.SectorDB;
+import com.gpp.devoluciondeenvases.clases.Config;
 import com.gpp.devoluciondeenvases.clases.Sector;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class MainDispensador extends AppCompatActivity {
     private SectorDB db;
-
+    String ApplicationConfigFilename = "configuraciondispensador.dat";
     private Button btniniciar;
 private int CantidadSectores = 0;
+private ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dispensador);
 
         btniniciar = findViewById(R.id.btniniciar);
-
+        imageButton = findViewById(R.id.imageButton);
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,27 +53,72 @@ private int CantidadSectores = 0;
                     Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
                     in.putExtra("cantidadSectores", CantidadSectores);
                     startActivity(in);
+
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }else{
                     Toast.makeText(MainDispensador.this, "Debe Registrar o Habilitar al menos 1 Sector", Toast.LENGTH_LONG).show();
                 }
 
-
-
             }
         });
+
         CantidadSectores = cargarLista();
+
         if (CantidadSectores>0){
+
             Intent in = new Intent(MainDispensador.this,DispensadorTurnoPrincipal.class);
             in.putExtra("cantidadSectores", CantidadSectores);
             startActivity(in);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }else{
+
             Toast.makeText(MainDispensador.this, "Debe Registrar o Habilitar al menos 1 Sector", Toast.LENGTH_LONG).show();
+
         }
 
 
+        cargarConfiguraion();
+
     }
+
+    private void cargarConfiguraion() {
+        Config appSettings = ReadApplicationSettingFromFile();
+        if (appSettings != null){
+            cargarimagen(appSettings.getPathimagen());
+
+        }
+    }
+
+    private void cargarimagen(String pathimagen) {
+
+        Bitmap bitmap = decodeSampledBitmapFromFile(pathimagen, 100, 100);
+
+        if (bitmap==null){
+            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr_milrollos);
+            imageButton.setImageBitmap(bitmap);
+
+        }else{
+            imageButton.setImageBitmap(bitmap);
+
+        }
+    }
+
+
+    public static Bitmap decodeSampledBitmapFromFile(String file, int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(file, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFile(file, options);
+    }
+
 
     @Override
     protected void onPostResume() {
@@ -182,5 +238,43 @@ private int CantidadSectores = 0;
             e.printStackTrace();
         }
     }
+    Config ReadApplicationSettingFromFile() {
+        Config ret = null;
+        InputStream instream;
+        try {
+           // showToast("Loading configuration");
+            instream = openFileInput(ApplicationConfigFilename);
+        } catch (FileNotFoundException e) {
 
+            Log.e("DOPrint", e.getMessage(), e);
+
+            showToast("No hay Configuración");
+
+            return null;
+        }
+
+        try {
+            ObjectInputStream ois = new ObjectInputStream(instream);
+
+            try {
+                ret = (Config) ois.readObject();
+            } catch (ClassNotFoundException e) {
+                Log.e("DOPrint", e.getMessage(), e);
+                ret = null;
+            }
+        } catch (Exception e) {
+            Log.e("DOPrint", e.getMessage(), e);
+            ret = null;
+        } finally {
+            try {
+                if (instream != null)
+                    instream.close();
+            } catch (IOException ignored) { }
+        }
+        return ret;
+    }
+
+    public void showToast(final String toast) {
+        Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_SHORT).show();
+    }
 }
