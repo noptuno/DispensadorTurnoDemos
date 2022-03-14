@@ -22,6 +22,7 @@ import com.gpp.devoluciondeenvases.basededatos.SectorDB;
 import com.gpp.devoluciondeenvases.clases.Sector;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RegistroSectores extends AppCompatActivity {
     private AdapterSector adapter;
@@ -54,6 +55,7 @@ public class RegistroSectores extends AppCompatActivity {
             public void onClick(View v) {
 
            limpiar();
+           finish();
 
             }
         });

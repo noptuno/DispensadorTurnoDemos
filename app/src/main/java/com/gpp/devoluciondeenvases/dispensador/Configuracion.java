@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -37,7 +38,7 @@ import java.io.ObjectOutputStream;
 
 public class Configuracion extends AppCompatActivity {
     ImageView imagen;
-    Button subir, guardar;
+    Button subir, guardar,cancelar;
     private static final int REQUEST_PICK_FILE = 1; //for File browsing
     static final String FOLDER_NAME_KEY = "com.gpp.config.FolderName";
     static final String FOLDER_PATH_KEY = "com.gpp.config.FolderPath";
@@ -64,7 +65,16 @@ public class Configuracion extends AppCompatActivity {
         }
 
 
+        cancelar = findViewById(R.id.btncancelar);
 
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
+
+            }
+        });
 
         imagen = findViewById(R.id.imglogo);
         subir = findViewById(R.id.btnsubirimagen);
@@ -155,7 +165,6 @@ public class Configuracion extends AppCompatActivity {
                     if(extras != null) {
                         String m_selectedPath = extras.getString(FOLDER_PATH_KEY);
                         cargarimagen(m_selectedPath);
-
                         }
                     }
                 }
@@ -169,7 +178,7 @@ public class Configuracion extends AppCompatActivity {
         Bitmap bitmap = decodeSampledBitmapFromFile(path, 100, 100);
 
         if (bitmap==null){
-            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr_milrollos);
+            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logodiscopeque);
             imagen.setImageBitmap(bitmap);
             g_appSettings.setPathimagen("error");
             txtpath.setText("No se encontro la imagen");

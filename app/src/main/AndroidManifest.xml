@@ -29,6 +29,7 @@
 
         <activity
             android:name=".dispensador.Configuracion"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".dispensador.MensajeActivity"
@@ -37,8 +38,10 @@
         <activity
             android:name=".dispensador.RegistroSectores"
             android:label="Registrar Sectores"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".dispensador.DispensadorTurnoPrincipal" />
+        <activity android:name=".dispensador.DispensadorTurnoPrincipal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".dispensador.MainDispensador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

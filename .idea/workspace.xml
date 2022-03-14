@@ -12,24 +12,26 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="3/3/2022 adjuntar imagen doprint">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/clases/Config.java" afterDir="false" />
+    <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="10/3/2022 ajustes">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/DispensadorTurno.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/DispensadorTurno.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/Configuracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/Configuracion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/DispensadorTurnoPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/DispensadorTurnoPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MainDispensador.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/MainDispensador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/RegistroSectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gpp/devoluciondeenvases/dispensador/RegistroSectores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/backgroudefecto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/backgroudefecto.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dispensador_turno_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_dispensador.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_resgistro_sectores.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.1.44:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -106,8 +108,8 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Descargas/DO-Print" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Personal/LockPassProyect" />
+    <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -279,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646742110373</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="10/3/2022 ajustes">
+      <created>1646944857140</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646944857140</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -341,7 +350,8 @@
     <MESSAGE value="diseñando" />
     <MESSAGE value="20/08/2021" />
     <MESSAGE value="8/03/2022 modificaciones carpetas" />
-    <option name="LAST_COMMIT_MESSAGE" value="8/03/2022 modificaciones carpetas" />
+    <MESSAGE value="10/3/2022 ajustes" />
+    <option name="LAST_COMMIT_MESSAGE" value="10/3/2022 ajustes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

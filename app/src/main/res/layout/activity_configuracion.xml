@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroudefecto"
     tools:context=".dispensador.Configuracion">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Configuración Dispensador"
             android:textAlignment="center"
+            android:textColor="#FAF6F6"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -31,7 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:text="Logo de la empresa" />
+            android:text="Logo de la empresa"
+            android:textColor="#FAF6F6"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,8 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/diseno_redondo_dos"
-                    android:backgroundTint="#039BE5"
+                    android:backgroundTint="#43A047"
                     android:clickable="true"
                     android:text="Subir"
                     android:textColor="@color/colorWhite"
@@ -78,7 +81,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="path imagen" />
+                android:text="path imagen"
+                android:textColor="#FAF6F6"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -87,7 +92,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Tipo de papel" />
+            android:text="Tipo de papel"
+            android:textColor="#FAF6F6"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/radiogroup"
@@ -101,14 +108,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
-                android:text="3 Pulgadas" />
+                android:text="2 Pulgadas"
+                android:textColor="#FAF6F6"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioB4plg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
-                android:text="4 Pulgadas" />
+                android:text="3 Pulgadas"
+                android:textColor="#FAF6F6"
+                android:textStyle="bold" />
         </RadioGroup>
 
         <LinearLayout
@@ -122,8 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/diseno_redondo_dos"
-                android:backgroundTint="#9F9B9B"
+                android:backgroundTint="#00897B"
                 android:text="CANCELAR"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold" />
@@ -134,8 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/diseno_redondo_dos"
-                android:backgroundTint="#43A047"
+                android:backgroundTint="#00897B"
                 android:text="Guardar"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold" />

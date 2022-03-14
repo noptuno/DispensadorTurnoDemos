@@ -37,14 +37,14 @@ public class MainDispensador extends AppCompatActivity {
     String ApplicationConfigFilename = "configuraciondispensador.dat";
     private Button btniniciar;
 private int CantidadSectores = 0;
-private ImageButton imageButton;
+private ImageView imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dispensador);
 
         btniniciar = findViewById(R.id.btniniciar);
-        imageButton = findViewById(R.id.imageButton);
+        imageButton = findViewById(R.id.logoempresa);
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,15 +77,21 @@ private ImageButton imageButton;
         }
 
 
-        cargarConfiguraion();
+
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cargarConfiguraion();
+    }
+
     private void cargarConfiguraion() {
+
         Config appSettings = ReadApplicationSettingFromFile();
         if (appSettings != null){
             cargarimagen(appSettings.getPathimagen());
-
         }
     }
 
@@ -94,7 +100,7 @@ private ImageButton imageButton;
         Bitmap bitmap = decodeSampledBitmapFromFile(pathimagen, 100, 100);
 
         if (bitmap==null){
-            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr_milrollos);
+            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logodiscopeque);
             imageButton.setImageBitmap(bitmap);
 
         }else{

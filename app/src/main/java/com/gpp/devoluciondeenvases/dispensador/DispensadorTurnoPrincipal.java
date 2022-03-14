@@ -1,5 +1,7 @@
 package com.gpp.devoluciondeenvases.dispensador;
 
+import static com.gpp.devoluciondeenvases.dispensador.FileBrowseActivity.calculateInSampleSize;
+
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -34,11 +37,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gpp.devoluciondeenvases.R;
 import com.gpp.devoluciondeenvases.adapter.AdapterDispensador;
 import com.gpp.devoluciondeenvases.basededatos.SectorDB;
+import com.gpp.devoluciondeenvases.clases.Config;
 import com.gpp.devoluciondeenvases.clases.Sector;
 import com.starmicronics.starioextension.ICommandBuilder;
 import com.starmicronics.starioextension.StarIoExt;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -66,6 +75,9 @@ private Button configurarnuevamente;
     private SectorDB db;
     ConstraintLayout constrain;
     ActionBar actionBar;
+    ImageView logoempresa;
+    int tipopael= 0;
+    Bitmap logoempresabitmap;
 
     private AdapterDispensador adapter;
 
@@ -78,7 +90,7 @@ private Button configurarnuevamente;
         contexto = this;
         click = MediaPlayer.create(contexto, R.raw.fin);
         click2 = MediaPlayer.create(contexto, R.raw.ckickk);
-
+        logoempresa = findViewById(R.id.fondoarriba);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -94,7 +106,7 @@ private Button configurarnuevamente;
         recyclerView.setAdapter(adapter);
         cargarLista();
         usb();
-
+        cargarConfiguraion();
         adapter.setOnNoteSelectedListener(new AdapterDispensador.OnNoteSelectedListener() {
             @Override
             public void onClick(Sector note) {
@@ -139,6 +151,45 @@ private Button configurarnuevamente;
         botonregresar();
         // super.onBackPressed();
 
+    }
+
+    private void cargarConfiguraion() {
+
+        Config appSettings = ReadApplicationSettingFromFile();
+        if (appSettings != null){
+
+            cargarimagen(appSettings.getPathimagen());
+            tipopael = appSettings.getTipopael();
+        }
+    }
+
+    private void cargarimagen(String pathimagen) {
+
+        Bitmap bitmaptemp = decodeSampledBitmapFromFile(pathimagen, 100, 100);
+
+        if (bitmaptemp!=null){
+             logoempresabitmap = bitmaptemp;
+             logoempresa.setImageBitmap(logoempresabitmap);
+        }else{
+            logoempresabitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logodiscopeque);
+            logoempresa.setImageBitmap(logoempresabitmap);
+        }
+
+    }
+
+    public static Bitmap decodeSampledBitmapFromFile(String file, int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(file, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFile(file, options);
     }
 
     private void botonregresar() {
@@ -205,7 +256,6 @@ private Button configurarnuevamente;
                     int numeroactual = sector.getNumeroSector();
                     SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy", Locale.getDefault());
                     Date date = new Date();
-
                     String fecha = dateFormat.format(date);
 
                     //animacion.setVisibility(View.VISIBLE);
@@ -213,41 +263,71 @@ private Button configurarnuevamente;
 
                     Charset encoding = Charset.forName("CP437");
 
-                    byte[] nombreproducto = "Su Turno es: ".getBytes(encoding);
-                    byte[] numeroimprimir = ("" + numeroactual).getBytes();
 
-                    Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.logodiscopeque);
+                    byte[] sectorname ;
+                    byte[] nombreproducto ;
+                    byte[] numeroimprimir ;
+                    byte[] fechaimprimir;
+
+                    ICommandBuilder.AlignmentPosition  align;
+
+                    if (tipopael==0){
+                        sectorname = (" "+nombreSector).getBytes();
+                        nombreproducto = "   Su Turno es: ".getBytes(encoding);
+                        if (numeroactual>9){
+                            numeroimprimir = (" " + numeroactual).getBytes();
+                        }else{
+                            numeroimprimir = (" " + "0"+numeroactual).getBytes();
+                        }
+
+                        fechaimprimir = ("   Fecha: " + fecha).getBytes();
+                        align =  ICommandBuilder.AlignmentPosition.Left;
+                    }else{
+                        sectorname = nombreSector.getBytes();
+                        nombreproducto = "Su Turno es: ".getBytes(encoding);
+
+                        if (numeroactual>9){
+                            numeroimprimir = (""+numeroactual).getBytes();
+                        }else{
+                            numeroimprimir = ("0"+numeroactual).getBytes();
+                        }
+
+                        fechaimprimir = ("Fecha: " + fecha).getBytes();
+                        align =  ICommandBuilder.AlignmentPosition.Center;
+                    }
+
+
+
+                    //Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.logodiscopeque);
 
                     ICommandBuilder builder = StarIoExt.createCommandBuilder(StarIoExt.Emulation.EscPos);
 
 
                     builder.appendCodePage(ICommandBuilder.CodePageType.UTF8);
                     builder.beginDocument();
-                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
-                    builder.appendBitmap(starLogoImage, false);
+                    builder.appendAlignment(align);
+                    builder.appendBitmap(logoempresabitmap, false);
                     builder.appendLineFeed();
 
-
-
                     //*********************************
-                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendAlignment(align);
                     builder.appendMultiple(3, 3);
-                    builder.appendAbsolutePosition(nombreSector.getBytes(), 0);
+                    builder.appendAbsolutePosition(sectorname, 0);
                     builder.appendLineFeed(1);
 
-                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendAlignment(align);
                     builder.appendMultiple(1, 1);
                     builder.appendAbsolutePosition(nombreproducto, 0);
                     builder.appendLineFeed();
                     builder.appendLineSpace(50);
-                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendAlignment(align);
                     builder.appendMultiple(10, 10);
                     builder.appendAbsolutePosition(numeroimprimir, 0);
                     builder.appendLineFeed();
-                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Center);
+                    builder.appendAlignment(align);
 
                     builder.appendMultiple(0, 0);
-                    builder.appendAbsolutePosition(("Fecha: " + fecha).getBytes(), 0);
+                    builder.appendAbsolutePosition((fechaimprimir), 0);
                     builder.appendLineFeed();
                     //**********************
 
@@ -471,6 +551,44 @@ private Button configurarnuevamente;
        hidebarras();
 
     }
+    String ApplicationConfigFilename = "configuraciondispensador.dat";
+    Config ReadApplicationSettingFromFile() {
+        Config ret = null;
+        InputStream instream;
+        try {
+            // showToast("Loading configuration");
+            instream = openFileInput(ApplicationConfigFilename);
+        } catch (FileNotFoundException e) {
 
+            Log.e("DOPrint", e.getMessage(), e);
 
+            showToast("No hay Configuración");
+
+            return null;
+        }
+
+        try {
+            ObjectInputStream ois = new ObjectInputStream(instream);
+
+            try {
+                ret = (Config) ois.readObject();
+            } catch (ClassNotFoundException e) {
+                Log.e("DOPrint", e.getMessage(), e);
+                ret = null;
+            }
+        } catch (Exception e) {
+            Log.e("DOPrint", e.getMessage(), e);
+            ret = null;
+        } finally {
+            try {
+                if (instream != null)
+                    instream.close();
+            } catch (IOException ignored) { }
+        }
+        return ret;
+    }
+
+    public void showToast(final String toast) {
+        Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_SHORT).show();
+    }
 }
