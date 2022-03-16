@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gpp.devoluciondeenvases">
+    package="com.gpp.dispensadorturnolocal">
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.hardware.usb.host" />
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver android:name=".dispensador.bootapp">
+        <receiver android:name="com.gpp.dispensadorturnolocal.dispensador.bootapp">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
@@ -28,31 +28,31 @@
         </receiver>
 
         <activity
-            android:name=".dispensador.Configuracion"
+            android:name="com.gpp.dispensadorturnolocal.dispensador.Configuracion"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
-            android:name=".dispensador.MensajeActivity"
+            android:name="com.gpp.dispensadorturnolocal.dispensador.MensajeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
-            android:name=".dispensador.RegistroSectores"
+            android:name="com.gpp.dispensadorturnolocal.dispensador.RegistroSectores"
             android:label="Registrar Sectores"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".dispensador.DispensadorTurnoPrincipal"
+        <activity android:name="com.gpp.dispensadorturnolocal.dispensador.DispensadorTurnoPrincipal"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".dispensador.MainDispensador">
+        <activity android:name="com.gpp.dispensadorturnolocal.dispensador.MainDispensador">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".envases.DispensadorTurno" />
-        <activity android:name=".envases.Test" />
+        <activity android:name="com.gpp.dispensadorturnolocal.envases.DispensadorTurno" />
+        <activity android:name="com.gpp.dispensadorturnolocal.envases.Test" />
         <activity
-            android:name=".dispensador.FileBrowseActivity"
+            android:name="com.gpp.dispensadorturnolocal.dispensador.FileBrowseActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:theme="@style/AppThemeSinbarra">
@@ -62,15 +62,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".envases.RegistrarProducto">
+        <activity android:name="com.gpp.dispensadorturnolocal.envases.RegistrarProducto">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.gpp.devoluciondeenvases.envases.MainActivity" />
+                android:value="com.gpp.dispensadorturnolocal.envases.MainActivity" />
         </activity>
         <activity
-            android:name=".envases.DevoluciondeEnvases"
+            android:name="com.gpp.dispensadorturnolocal.envases.DevoluciondeEnvases"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".envases.MainActivity" />
+        <activity android:name="com.gpp.dispensadorturnolocal.envases.MainActivity" />
     </application>
 
 </manifest>
