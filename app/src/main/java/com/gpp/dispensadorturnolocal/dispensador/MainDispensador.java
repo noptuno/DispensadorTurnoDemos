@@ -99,7 +99,7 @@ private ImageView imageButton;
         Bitmap bitmap = decodeSampledBitmapFromFile(pathimagen, 100, 100);
 
         if (bitmap==null){
-            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logodiscopeque);
+            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr);
             imageButton.setImageBitmap(bitmap);
 
         }else{

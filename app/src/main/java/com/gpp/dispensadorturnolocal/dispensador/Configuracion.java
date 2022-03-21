@@ -34,6 +34,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.util.Objects;
 
 public class Configuracion extends AppCompatActivity {
     ImageView imagen;
@@ -55,6 +56,10 @@ public class Configuracion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         int readExternalPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
         int writeExternalPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -135,6 +140,12 @@ public class Configuracion extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
+    }
+
     public void cargarimagen() {
 
 
@@ -175,7 +186,7 @@ public class Configuracion extends AppCompatActivity {
         Bitmap bitmap = decodeSampledBitmapFromFile(path, 100, 100);
 
         if (bitmap==null){
-            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logodiscopeque);
+            bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr);
             imagen.setImageBitmap(bitmap);
             g_appSettings.setPathimagen("error");
             txtpath.setText("No se encontro la imagen");

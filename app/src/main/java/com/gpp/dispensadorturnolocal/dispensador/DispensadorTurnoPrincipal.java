@@ -172,7 +172,7 @@ private Button configurarnuevamente;
              logoempresabitmap = bitmaptemp;
              logoempresa.setImageBitmap(logoempresabitmap);
         }else{
-            logoempresabitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logodiscopeque);
+            logoempresabitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr);
             logoempresa.setImageBitmap(logoempresabitmap);
         }
 
@@ -391,8 +391,6 @@ private Button configurarnuevamente;
             }
         }
     }
-
-
 
     private int imcrementar(int ultimonumero){
         int LIMIT_CANTIDAD = 100;

@@ -29,7 +29,6 @@
 
         <activity
             android:name="com.gpp.dispensadorturnolocal.dispensador.Configuracion"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
             android:name="com.gpp.dispensadorturnolocal.dispensador.MensajeActivity"
@@ -38,7 +37,6 @@
         <activity
             android:name="com.gpp.dispensadorturnolocal.dispensador.RegistroSectores"
             android:label="Registrar Sectores"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name="com.gpp.dispensadorturnolocal.dispensador.DispensadorTurnoPrincipal"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>

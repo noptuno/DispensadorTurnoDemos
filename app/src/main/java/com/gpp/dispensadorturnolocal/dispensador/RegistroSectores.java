@@ -22,6 +22,7 @@ import com.gpp.dispensadorturnolocal.basededatos.SectorDB;
 import com.gpp.dispensadorturnolocal.clases.Sector;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RegistroSectores extends AppCompatActivity {
     private AdapterSector adapter;
@@ -37,7 +38,8 @@ public class RegistroSectores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_resgistro_sectores);
-
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         layoutPrincipal = findViewById(R.id.layoutbotones);
 
         botones();
@@ -163,7 +165,11 @@ public class RegistroSectores extends AppCompatActivity {
         }
 
     }
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
+    }
 
     private void botones() {
         final String red = "#B30D0D";
