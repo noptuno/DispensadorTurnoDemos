@@ -12,9 +12,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="38e2edb4-94dc-4676-8f69-fe6240c37ce5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -288,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647877761561</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="23/3/2022 ajustes menores">
+      <created>1648066901037</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1648066901037</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -378,7 +383,8 @@
     <MESSAGE value="8/03/2022 modificaciones carpetas" />
     <MESSAGE value="16/3/2022 bootapp configurado" />
     <MESSAGE value="21/3/2022 configuraciones finales diseño" />
-    <option name="LAST_COMMIT_MESSAGE" value="21/3/2022 configuraciones finales diseño" />
+    <MESSAGE value="23/3/2022 ajustes menores" />
+    <option name="LAST_COMMIT_MESSAGE" value="23/3/2022 ajustes menores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
