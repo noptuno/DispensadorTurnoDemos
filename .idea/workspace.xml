@@ -98,7 +98,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test_Impresion" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -303,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648066959997</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="29/3/2022 no regresar y ocultar barra">
+      <created>1648567080314</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1648567080314</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -394,7 +401,8 @@
     <MESSAGE value="16/3/2022 bootapp configurado" />
     <MESSAGE value="21/3/2022 configuraciones finales diseño" />
     <MESSAGE value="23/3/2022 ajustes menores" />
-    <option name="LAST_COMMIT_MESSAGE" value="23/3/2022 ajustes menores" />
+    <MESSAGE value="29/3/2022 no regresar y ocultar barra" />
+    <option name="LAST_COMMIT_MESSAGE" value="29/3/2022 no regresar y ocultar barra" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

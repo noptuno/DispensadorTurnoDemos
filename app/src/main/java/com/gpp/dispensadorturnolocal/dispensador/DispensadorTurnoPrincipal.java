@@ -377,6 +377,7 @@ private Button configurarnuevamente;
 
                         } else {
                             Toast.makeText(DispensadorTurnoPrincipal.this, "Impresora no conectada", Toast.LENGTH_LONG).show();
+                            usb();
                         }
                     }
 
@@ -500,12 +501,12 @@ private Button configurarnuevamente;
 
             if (connection != null && connection.claimInterface(usbInterface, true)) {
                 impresoraactiva = true;
-
                 Toast.makeText(DispensadorTurnoPrincipal.this, "Impresora Conectada", Toast.LENGTH_SHORT).show();
             }else{
 
                 impresoraactiva = false;
                 Toast.makeText(DispensadorTurnoPrincipal.this, "No Impresora Conectada", Toast.LENGTH_SHORT).show();
+
             }
 
         } catch (Exception var2) {
