@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
@@ -42,6 +43,7 @@ import com.gpp.dispensadorturnolocal.clases.Sector;
 import com.starmicronics.starioextension.ICommandBuilder;
 import com.starmicronics.starioextension.StarIoExt;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -192,15 +194,27 @@ private Button configurarnuevamente;
 
     private void cargarimagen(String pathimagen) {
 
-        Bitmap bitmaptemp = decodeSampledBitmapFromFile(pathimagen, 100, 100);
+        Bitmap bitmaptemp = decodeSampledBitmapFromFile(pathimagen, 150, 150);
 
         if (bitmaptemp!=null){
-             logoempresabitmap = bitmaptemp;
-             logoempresa.setImageBitmap(logoempresabitmap);
+
+
+            logoempresa.setImageBitmap(bitmaptemp);
+            byte[] bitmapData = convertTo1BPP(bitmaptemp, 128);
+            logoempresabitmap= BitmapFactory.decodeByteArray(bitmapData, 0, bitmapData.length);
+
+
         }else{
+
             logoempresabitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logo_dmr);
             logoempresa.setImageBitmap(logoempresabitmap);
+
         }
+
+
+
+
+
 
     }
 
@@ -325,14 +339,14 @@ private Button configurarnuevamente;
 
 
 
-                    //Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.logodiscopeque);
+                  //  Bitmap starLogoImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.logodiscopeque);
 
                     ICommandBuilder builder = StarIoExt.createCommandBuilder(StarIoExt.Emulation.EscPos);
 
 
                     builder.appendCodePage(ICommandBuilder.CodePageType.UTF8);
                     builder.beginDocument();
-                    builder.appendAlignment(align);
+                    builder.appendAlignment(ICommandBuilder.AlignmentPosition.Left);
                     builder.appendBitmap(logoempresabitmap, false);
                     builder.appendLineFeed();
 
@@ -623,4 +637,86 @@ private Button configurarnuevamente;
     public void showToast(final String toast) {
         Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_SHORT).show();
     }
+
+    private byte[] intToDWord(int parValue) {
+        byte[] retValue = new byte[]{(byte) (parValue & 255), (byte) (parValue >> 8 & 255), (byte) (parValue >> 16 & 255), (byte) (parValue >> 24 & 255)};
+        return retValue;
+    }
+
+    private byte[] intToWord(int parValue) {
+        byte[] retValue = new byte[]{(byte) (parValue & 255), (byte) (parValue >> 8 & 255)};
+        return retValue;
+    }
+
+
+    private byte[] convertTo1BPP(Bitmap inputBitmap, int darknessThreshold) {
+        int width = inputBitmap.getWidth();
+        int height = inputBitmap.getHeight();
+        ByteArrayOutputStream mImageStream = new ByteArrayOutputStream();
+        int BITMAPFILEHEADER_SIZE = 14;
+        int BITMAPINFOHEADER_SIZE = 40;
+        short biPlanes = 1;
+        short biBitCount = 1;
+        int biCompression = 0;
+        int biSizeImage = (width * biBitCount + 31 & -32) / 8 * height;
+        int biXPelsPerMeter = 0;
+        int biYPelsPerMeter = 0;
+        int biClrUsed = 2;
+        int biClrImportant = 2;
+        byte[] bfType = new byte[]{66, 77};
+        short bfReserved1 = 0;
+        short bfReserved2 = 0;
+        int bfOffBits = BITMAPFILEHEADER_SIZE + BITMAPINFOHEADER_SIZE + 8;
+        int bfSize = bfOffBits + biSizeImage;
+        byte[] colorPalette = new byte[]{0, 0, 0, -1, -1, -1, -1, -1};
+        int monoBitmapStride = (width + 31 & -32) / 8;
+        byte[] newBitmapData = new byte[biSizeImage];
+
+        try {
+            mImageStream.write(bfType);
+            mImageStream.write(this.intToDWord(bfSize));
+            mImageStream.write(this.intToWord(bfReserved1));
+            mImageStream.write(this.intToWord(bfReserved2));
+            mImageStream.write(this.intToDWord(bfOffBits));
+            mImageStream.write(this.intToDWord(BITMAPINFOHEADER_SIZE));
+            mImageStream.write(this.intToDWord(width));
+            mImageStream.write(this.intToDWord(height));
+            mImageStream.write(this.intToWord(biPlanes));
+            mImageStream.write(this.intToWord(biBitCount));
+            mImageStream.write(this.intToDWord(biCompression));
+            mImageStream.write(this.intToDWord(biSizeImage));
+            mImageStream.write(this.intToDWord(biXPelsPerMeter));
+            mImageStream.write(this.intToDWord(biYPelsPerMeter));
+            mImageStream.write(this.intToDWord(biClrUsed));
+            mImageStream.write(this.intToDWord(biClrImportant));
+            mImageStream.write(colorPalette);
+            int[] imageData = new int[height * width];
+            inputBitmap.getPixels(imageData, 0, width, 0, 0, width, height);
+
+            for (int y = 0; y < height; ++y) {
+                for (int x = 0; x < width; ++x) {
+                    int pixelIndex = y * width + x;
+                    int mask = 128 >> (x & 7);
+                    int pixel = imageData[pixelIndex];
+                    int R = Color.red(pixel);
+                    int G = Color.green(pixel);
+                    int B = Color.blue(pixel);
+                    int A = Color.alpha(pixel);
+                    boolean set = A < darknessThreshold || R + G + B > darknessThreshold * 3;
+                    if (set) {
+                        int index = (height - y - 1) * monoBitmapStride + (x >>> 3);
+                        newBitmapData[index] = (byte) (newBitmapData[index] | mask);
+                    }
+                }
+            }
+
+            mImageStream.write(newBitmapData);
+        } catch (Exception var36) {
+            var36.printStackTrace();
+        }
+
+        return mImageStream.toByteArray();
+    }
+
+
 }
