@@ -55,7 +55,7 @@ public class FileBrowseActivity extends AppCompatActivity {
     private final static String DEFAULT_INITIAL_DIRECTORY = Environment.getExternalStorageDirectory().getParentFile().getParent();
     private final static String INTERNAL_STORAGE = "Internal Storage";
     private final static String EXTERNAL_STORAGE = "External Storage";
-
+    private final static String DEFAULT_INITIAL_DIRECTORY_PENDRIVE = Environment.getExternalStorageDirectory().getParentFile().getParent();
 
     protected File currentFile;
     protected ArrayList<File> filesList;
