@@ -189,6 +189,8 @@ private Button configurarnuevamente;
 
             cargarimagen(appSettings.getPathimagen());
             tipopael = appSettings.getTipopael();
+        }else{
+            cargarimagen("null");
         }
     }
 

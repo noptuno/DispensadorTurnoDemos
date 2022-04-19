@@ -91,6 +91,8 @@ private ImageView imageButton;
         Config appSettings = ReadApplicationSettingFromFile();
         if (appSettings != null){
             cargarimagen(appSettings.getPathimagen());
+        }else{
+            cargarimagen("null");
         }
     }
 

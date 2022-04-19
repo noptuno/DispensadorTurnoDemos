@@ -146,6 +146,8 @@ public class Configuracion extends AppCompatActivity {
 
            cargarimagen(pathimagen);
 
+        }else{
+            cargarimagen("null");
         }
 
     }

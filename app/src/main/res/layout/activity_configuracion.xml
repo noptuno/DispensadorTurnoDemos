@@ -45,7 +45,7 @@
                     android:layout_height="200dp"
                     android:layout_margin="5dp"
                     android:scaleType="fitXY"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@drawable/ic_logo_dmrcirculo" />
 
                 <Space
                     android:layout_width="wrap_content"
